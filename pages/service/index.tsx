@@ -4,7 +4,8 @@ import Card from "../../components/card";
 
 export default function Home() {
   return (
-    <div>
+    <div className="h-screen">
+      {" "}
       service
       <Card />
     </div>
