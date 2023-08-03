@@ -1,3 +1,3 @@
 export default function Card() {
-  return <p>card</p>;
+  return <p>card test</p>;
 }
