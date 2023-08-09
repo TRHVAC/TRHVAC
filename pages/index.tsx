@@ -7,6 +7,8 @@ import ServiceHeating from '@public/home/service-heating.jpg';
 import ServiceCooling from '@public/home/service-cooling.jpg';
 import ServiceIAQ from '@public/home/service-iaq.jpg';
 import ServiceWaterHeater from '@public/home/service-water-heater.jpg';
+import AboutImage from '@public/home/about.jpg';
+import AdvantageBanner from '@public/home/advantage.jpg';
 
 const serviceItems = [
   { title: 'Heating', image: ServiceHeating },
@@ -83,7 +85,40 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex-1 bg-[url('/home/about.jpg')] bg-cover bg-no-repeat" />
+        <div className="flex-1 relative">
+          <Image
+            src={AboutImage}
+            alt="Home-About"
+            placeholder="blur"
+            fill
+            style={{
+              objectFit: 'cover',
+            }}
+          />
+        </div>
+      </div>
+
+      {/* Advantage Section */}
+      <div className="flexcenter flex-row relative p-12 mt-24 overflow-hidden bg-tr-blue/80">
+        <div className="text-white flex-1 text-center z-10">Service in GTA Area</div>
+
+        <div className="text-white flex-1 text-center z-10">Gas & A/C Licensed</div>
+
+        <div className="text-white flex-1 text-center z-10">TSSA & 2 Million Insured</div>
+
+        <div className="text-white flex-1 text-center z-10">Affordable Price</div>
+
+        <div className="opacity-50">
+          <Image
+            src={AdvantageBanner}
+            alt={'Home-advantage-banner'}
+            placeholder="blur"
+            fill
+            style={{
+              objectFit: 'cover',
+            }}
+          />
+        </div>
       </div>
     </div>
   );
