@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -19,12 +18,10 @@ const serviceItems = [
 export default function Home() {
   return (
     <div>
-      <Head>
-        <title>TRHVAC</title>
-      </Head>
-
+      {/* Hero Section */}
       <Hero heroImageCategory="HOME" />
 
+      {/* Our Service Section */}
       <div className="flexcenter flex-col mt-10 bg-tr-lightGray">
         <div className="py-4 text-tr-blue text-xl font-bold">Our Service</div>
 
@@ -61,6 +58,32 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* About Section */}
+      <div className="flex flex-row mt-16 bg-tr-lightGray">
+        <div className="flex-[2_2_0%] p-10">
+          <div className="font-bold text-tr-red text-xl">Your trusted partner</div>
+
+          <div className="text-tr-blue font-medium text-3xl mt-2">
+            TR Heating & Cooling
+          </div>
+
+          <div className="mt-4 whitespace-pre-line">
+            Introducing TR Heating and Cooling, your trusted partner for all your HVAC
+            needs in Greater Toronto Area. With over a decades of industry experience, our
+            dedicated team of professionals is passionate about creating comfortable
+            living spaces for Canadians throughout the year.
+            {'\n'}
+            {'\n'}
+            At TR Heating and Cooling, our primary focus is ensuring complete customer
+            satisfaction. Our mission is to help you save money, extend the lifespan of
+            your appliances, and enhance the value of your home, all while ensuring your
+            utmost comfort.
+          </div>
+        </div>
+
+        <div className="flex-1 bg-[url('/home/about.jpg')] bg-cover bg-no-repeat" />
       </div>
     </div>
   );
