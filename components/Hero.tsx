@@ -9,6 +9,7 @@ import HeatingHero from '@public/hero/HeatingHero.jpg';
 import IAQHero from '@public/hero/IAQHero.jpg';
 import WaterHeaterHero from '@public/hero/WaterHeaterHero.jpg';
 import BookingHero from '@public/hero/BookingHero.jpg';
+
 interface HeroProps {
   heroImageCategory?: 'HOME' | 'COOLING' | 'HEATING' | 'IAQ' | 'WATER_HEATER' | 'BOOKING';
 }
