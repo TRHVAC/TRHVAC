@@ -9,12 +9,27 @@ import ServiceIAQ from '@public/home/service-iaq.jpg';
 import ServiceWaterHeater from '@public/home/service-water-heater.jpg';
 import AboutImage from '@public/home/about.jpg';
 import AdvantageBanner from '@public/home/advantage.jpg';
+import { ACIcon } from '@components/icons/home/ACIcon';
+import { BoilerIcon } from '@components/icons/home/BoilerIcon';
+import { FurnaceIcon } from '@components/icons/home/FurnaceIcon';
+import { GasLineIcon } from '@components/icons/home/GasLineIcon';
+import { MaintenanceIcon } from '@components/icons/home/MaintenanceIcon';
+import { TanklessIcon } from '@components/icons/home/TanklessIcon';
 
 const serviceItems = [
   { title: 'Heating', image: ServiceHeating },
   { title: 'Cooling', image: ServiceCooling },
   { title: 'Water Heaters', image: ServiceWaterHeater },
   { title: 'Indoor Air Quality Products', image: ServiceIAQ },
+];
+
+const specialtyItems = [
+  { title: 'A/C', icon: <ACIcon /> },
+  { title: 'Furnace', icon: <FurnaceIcon /> },
+  { title: 'Maintenance', icon: <MaintenanceIcon /> },
+  { title: 'Gas Line', icon: <GasLineIcon /> },
+  { title: 'Tankless', icon: <TanklessIcon /> },
+  { title: 'Boiler', icon: <BoilerIcon /> },
 ];
 
 export default function Home() {
@@ -37,7 +52,7 @@ export default function Home() {
           <div className="grid gap-4 grid-cols-2 flex-1">
             {serviceItems.map((service, index) => (
               <Link
-                key={index}
+                key={`${service.title}-${index}`}
                 href="/service"
                 className="relative flexcenter overflow-hidden bg-[#444648A6]"
               >
@@ -118,6 +133,35 @@ export default function Home() {
               objectFit: 'cover',
             }}
           />
+        </div>
+      </div>
+
+      {/* Our Specialty Section */}
+      <div className="flex flex-row bg-tr-lightGray mt-24">
+        <div className="bg-tr-skyBlue flexcenter py-14">
+          <div className="rotate-[270deg] whitespace-pre-line text-2xl text-white font-extrabold">
+            @@ Years {'\n'} Experience
+          </div>
+        </div>
+
+        <div className="flex-1 px-12">
+          <div className="mt-6 text-tr-red text-xl font-bold text-center">
+            Our Specialty
+          </div>
+
+          <div className="flex flex-row mt-5 font-medium">
+            {specialtyItems.map((item, index) => {
+              return (
+                <div
+                  className="flexcenter flex-col flex-1"
+                  key={`${item.title}-${index}`}
+                >
+                  <div className="mb-2">{item.title}</div>
+                  {item.icon}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
