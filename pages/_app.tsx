@@ -21,9 +21,9 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
 
-      <Navbar />
-
       <div className="h-screen max-w-7xl mx-auto">
+        <Navbar />
+
         <Component {...pageProps} />
 
         <Footer />
