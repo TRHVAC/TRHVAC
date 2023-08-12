@@ -6,8 +6,4 @@
   .flexcenter {
     @apply flex items-center justify-center;
   }
-
-  .top-nav {
-    @apply sticky top-0 z-[1000];
-  }
 }
