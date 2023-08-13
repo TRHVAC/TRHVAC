@@ -18,6 +18,9 @@ module.exports = {
         'tr-silver': '##D6D5D1',
         'tr-lightGray': '#F6F6F6',
       },
+      fontFamily:{
+        sans:['Roboto', "Arial"],
+      },
     },
   },
   plugins: [],
