@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import Navbar from './navbar';
 import Footer from './footer';
-import Seo from './Seo';
+import Seo from './seo';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (

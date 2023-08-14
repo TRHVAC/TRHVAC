@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Hero } from '@components/Hero';
+import Hero from '@components/hero';
 import ServiceImg from '@public/home/service.jpg';
 import ServiceHeating from '@public/home/service-heating.jpg';
 import ServiceCooling from '@public/home/service-cooling.jpg';
