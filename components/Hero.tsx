@@ -14,7 +14,7 @@ interface HeroProps {
   heroImageCategory?: 'HOME' | 'COOLING' | 'HEATING' | 'IAQ' | 'WATER_HEATER' | 'BOOKING';
 }
 
-export const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' }) => {
+const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' }) => {
   const getHeroImage = useCallback((): StaticImageData => {
     switch (heroImageCategory) {
       case 'COOLING':
@@ -85,3 +85,5 @@ export const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' 
     </div>
   );
 };
+
+export default Hero;
