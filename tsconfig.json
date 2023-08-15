@@ -24,6 +24,12 @@
       // "@libs/*": ["libs/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/booking"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/booking",
+    "components/map.tsx"
+  ],
   "exclude": ["node_modules"]
 }

@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.19.2",
+    "google-map-react": "^2.2.1",
     "next": "13.4.12",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-google-maps": "^9.4.5",
     "react-hook-form": "^7.45.2"
   },
   "devDependencies": {
