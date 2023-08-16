@@ -49,7 +49,7 @@ const Booking: NextPage = () => {
     <>
       <Hero heroImageCategory="BOOKING" />
 
-      <div className="flex flex-row  gap-10 justify-center items-center my-10">
+      <div className="flex flex-row gap-10 justify-center items-center my-10">
         {/* left text */}
         <div className="flex flex-row">
           <div className="flex flex-col gap-1">

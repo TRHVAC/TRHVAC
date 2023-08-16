@@ -2,7 +2,7 @@ import React, { FunctionComponent, useCallback } from 'react';
 import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
 
-import { HeroBodyContents } from '@utils/constants';
+import { HeroBodyContents, THeroImageCategory } from '@utils/constants';
 import HomeHero from '@public/hero/HomeHero.jpg';
 import CoolingHero from '@public/hero/CoolingHero.jpg';
 import HeatingHero from '@public/hero/HeatingHero.jpg';
@@ -11,7 +11,7 @@ import WaterHeaterHero from '@public/hero/WaterHeaterHero.jpg';
 import BookingHero from '@public/hero/BookingHero.jpg';
 
 interface HeroProps {
-  heroImageCategory?: 'HOME' | 'COOLING' | 'HEATING' | 'IAQ' | 'WATER_HEATER' | 'BOOKING';
+  heroImageCategory: THeroImageCategory;
 }
 
 const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' }) => {
@@ -26,7 +26,7 @@ const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' }) => {
       case 'IAQ':
         return IAQHero;
 
-      case 'WATER_HEATER':
+      case 'WATERHEATER':
         return WaterHeaterHero;
 
       case 'BOOKING':
@@ -59,7 +59,7 @@ const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' }) => {
         />
 
         <div
-          className={`flex flex-col pt-20 -ml-10 ${
+          className={`flex flex-col pt-20 -ml-10 relative ${
             heroImageCategory === 'IAQ' ? 'text-black' : 'text-white'
           }`}
         >
@@ -77,7 +77,10 @@ const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' }) => {
             {HeroBodyContents[heroImageCategory].subTitle}
           </h2>
 
-          <Link href="/booking" className="flexcenter bg-tr-red p-4 w-52 text-2xl mt-14">
+          <Link
+            href="/booking"
+            className="flexcenter bg-tr-red p-4 w-52 text-2xl absolute bottom-0 mb-14"
+          >
             Book a service
           </Link>
         </div>
