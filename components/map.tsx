@@ -43,7 +43,7 @@ const App = () => {
         </button>
         <div className="text-white flex flex-col gap-1">
           <span>Monday - Saturday</span>
-          <span>9:00 am - 9:00 pm</span>
+          <span>9:00 am - 7:00 pm</span>
           <span>(647) 522 - 5652</span>
           <span>L3P6Y5, North York, ON</span>
         </div>
