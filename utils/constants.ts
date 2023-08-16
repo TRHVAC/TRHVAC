@@ -1,6 +1,11 @@
-export const HeroBodyContents: {
-  [key: string]: { intro?: string; title: string; subTitle: string };
-} = {
+export const HeroBodyContents: Record<
+  THeroImageCategory,
+  {
+    intro?: string;
+    title: string;
+    subTitle: string;
+  }
+> = {
   HOME: {
     intro: 'HEATING & COOLING SERVICES',
     title: 'Keep Your Cool With us',
@@ -18,7 +23,7 @@ export const HeroBodyContents: {
     title: `Indoor Air Quality${'\n'}(IAQ) Products`,
     subTitle: 'Installation | Replacement | Repair | Maintenance',
   },
-  WATER_HEATER: {
+  WATERHEATER: {
     title: 'Water Heaters',
     subTitle: 'Installation | Replacement | Repair | Maintenance',
   },
@@ -27,3 +32,11 @@ export const HeroBodyContents: {
     subTitle: 'Heating | Coooling | Water Heaters | IAQ Products',
   },
 };
+
+export type THeroImageCategory =
+  | 'HOME'
+  | 'COOLING'
+  | 'HEATING'
+  | 'IAQ'
+  | 'WATERHEATER'
+  | 'BOOKING';

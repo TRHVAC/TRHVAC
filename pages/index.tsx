@@ -17,10 +17,10 @@ import { MaintenanceIcon } from '@components/icons/home/MaintenanceIcon';
 import { TanklessIcon } from '@components/icons/home/TanklessIcon';
 
 const serviceItems = [
-  { title: 'Heating', image: ServiceHeating },
-  { title: 'Cooling', image: ServiceCooling },
-  { title: 'Water Heaters', image: ServiceWaterHeater },
-  { title: 'Indoor Air Quality Products', image: ServiceIAQ },
+  { title: 'Heating', image: ServiceHeating, queryName: 'heating' },
+  { title: 'Cooling', image: ServiceCooling, queryName: 'cooling' },
+  { title: 'Water Heaters', image: ServiceWaterHeater, queryName: 'waterheater' },
+  { title: 'Indoor Air Quality Products', image: ServiceIAQ, queryName: 'iaq' },
 ];
 
 const specialtyItems = [
@@ -31,6 +31,8 @@ const specialtyItems = [
   { title: 'Tankless', icon: <TanklessIcon /> },
   { title: 'Boiler', icon: <BoilerIcon /> },
 ];
+
+const CUR_YEAR = new Date().getFullYear();
 
 export default function Home() {
   return (
@@ -53,7 +55,7 @@ export default function Home() {
             {serviceItems.map((service, index) => (
               <Link
                 key={`${service.title}-${index}`}
-                href="/service"
+                href={`/service/${service.queryName}`}
                 className="relative flexcenter overflow-hidden bg-[#444648A6]"
               >
                 <div className="text-xl font-bold text-white z-10 text-center">
@@ -139,8 +141,8 @@ export default function Home() {
       {/* Our Specialty Section */}
       <div className="flex flex-row bg-tr-lightGray mt-24">
         <div className="bg-tr-skyBlue flexcenter py-14">
-          <div className="rotate-[270deg] whitespace-pre-line text-2xl text-white font-extrabold">
-            @@ Years {'\n'} Experience
+          <div className="rotate-[270deg] whitespace-pre-line text-2xl text-white font-extrabold text-center">
+            {CUR_YEAR - 2014} Years {'\n'} Experience
           </div>
         </div>
 
