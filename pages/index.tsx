@@ -32,6 +32,8 @@ const specialtyItems = [
   { title: 'Boiler', icon: <BoilerIcon /> },
 ];
 
+const CUR_YEAR = new Date().getFullYear();
+
 export default function Home() {
   return (
     <div>
@@ -139,8 +141,8 @@ export default function Home() {
       {/* Our Specialty Section */}
       <div className="flex flex-row bg-tr-lightGray mt-24">
         <div className="bg-tr-skyBlue flexcenter py-14">
-          <div className="rotate-[270deg] whitespace-pre-line text-2xl text-white font-extrabold">
-            @@ Years {'\n'} Experience
+          <div className="rotate-[270deg] whitespace-pre-line text-2xl text-white font-extrabold text-center">
+            {CUR_YEAR - 2014} Years {'\n'} Experience
           </div>
         </div>
 
