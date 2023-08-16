@@ -1,13 +1,17 @@
-import Head from "next/head";
-import Image from "next/image";
-import Card from "@components/card";
+import type { NextPage } from 'next';
+import { useRouter } from 'next/router';
 
-export default function Home() {
-  return (
-    <div className="h-screen">
-      {" "}
-      service
-      <Card />
-    </div>
-  );
-}
+import { useEffect } from 'react';
+
+const Service: NextPage = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Redirect to /service/cooling page when the user visits /service
+    router.replace('/service/cooling');
+  }, [router]);
+
+  return null;
+};
+
+export default Service;
