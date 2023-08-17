@@ -8,7 +8,7 @@ import {InstagramIcon} from "./icons/nav/InstagramIcon";
 
 export default function Navbar() {
   return (
-    <nav>
+    <>
       <div className="flex justify-between bg-white">
         <div className="flexcenter ml-10">
           <Link href="/"><Image src="/../public/home/nav_logo.png" alt="company logo" width="80" height="80"/></Link>
@@ -21,8 +21,7 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
-
-      <div className="justify-between sticky top-0 z-[1000] flex gap-3 bg-tr-lightGray">
+      <div className="justify-between flex bg-tr-lightGray drop-shadow-xl sticky top-0 z-[1000]">
         <div className="flexcenter text-4xl font-extrabold text-tr-skyBlue ml-5 font-sans ">
           <Link href='/'>TR HVAC</Link>
         </div>
@@ -31,12 +30,12 @@ export default function Navbar() {
             <Link href="/" className="hover:text-tr-skyBlue">HOME</Link>
             <div>
               <Link href="/service" className="hover:text-tr-skyBlue">SERVICE</Link>
-              <ul className="">
+              {/* <ul className="">
                 <li>Heating</li>
                 <li>Cooling</li>
                 <li>Water Heaters</li>
                 <li>Indoor Air Quality Products</li>
-              </ul>
+              </ul> */}
             </div>
             <Link href="/booking" className="hover:text-tr-skyBlue">BOOKING</Link>
           </ul>
@@ -51,7 +50,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-        
-    </nav>
+    </>
   );
 }
