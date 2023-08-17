@@ -7,6 +7,9 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import useMutation from '@libs/client/useMutation';
 import Hero from '@components/hero';
+import Link from 'next/link';
+import {MapIcon} from '@components/icons/nav/MapIcon';
+import {PhoneIconBook} from'@components/icons/booking/PhoneIconBook';
 
 interface BookingForm {
   email: string;
@@ -53,16 +56,19 @@ const Booking: NextPage = () => {
         {/* left text */}
         <div className="flex flex-row">
           <div className="flex flex-col gap-1">
-            <h2 className="text-xl text-blue-800">We are here for you</h2>
-            <div className=" flex flex-col gap-1">
-              <span>
-                Call <span className="text-pink-600">0000</span> or{' '}
-                <span className="text-blue-300">book online</span> here
-              </span>
+            <h2 className="text-2xl text-tr-blue font-semibold mb-4">We are here for you</h2>
+            <div className="flex flex-col gap-1">
+              <div className='text-tr-blue font-semibold'>
+                <span>
+                  Call <span className="text-tr-red"><Link href="tel:647-522-5652">(647) 522-5652</Link></span> or{' '}
+                  <span className="text-tr-skyBlue">book online</span> here.
+                </span>
+              </div>
+              
               <span>Monday - Saturday</span>
-              <span>9:00 am - 9:00 pm</span>
-              <span>(647) 522 - 5652</span>
-              <span>L3P6Y5, North York, ON</span>
+              <span>9:00 am - 7:00 pm</span>
+              <span className='flex gap-1'><PhoneIconBook/>(647) 522 - 5652</span>
+              <span className='flex gap-1'><MapIcon/>L3P6Y5, North York, ON</span>
             </div>
             <div className="w-48 h-60 mt-3 bg-yellow-300">image of a person</div>
           </div>
