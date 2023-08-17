@@ -21,22 +21,25 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
-      <div className="justify-between flex bg-tr-lightGray drop-shadow-xl sticky top-0 z-[1000]">
+
+      <div className="relative justify-between flex bg-tr-lightGray drop-shadow-lg sticky top-0 z-[1000]">
         <div className="flexcenter text-4xl font-extrabold text-tr-skyBlue ml-5 font-sans ">
           <Link href='/'>TR HVAC</Link>
         </div>
         <div className="flexcenter text-lg">
           <ul className="flex gap-16 ">
             <Link href="/" className="hover:text-tr-skyBlue">HOME</Link>
-            <div>
-              <Link href="/service" className="hover:text-tr-skyBlue">SERVICE</Link>
-              {/* <ul className="">
-                <li>Heating</li>
-                <li>Cooling</li>
-                <li>Water Heaters</li>
-                <li>Indoor Air Quality Products</li>
-              </ul> */}
+
+            <div className="group">
+              <div className="group-hover:text-tr-skyBlue">SERVICE</div>
+              <div className="absolute drop-shadow-lg bg-tr-lightGray z-10 hidden group-hover:block">
+                  <a href="/service/heating" className="hover:text-tr-skyBlue block px-4 py-2">Heating</a>
+                  <a href="/service/cooling" className="hover:text-tr-skyBlue block px-4 py-2">Cooling</a>
+                  <a href="/service/waterheater" className="hover:text-tr-skyBlue block px-4 py-2">Water Heaters</a>
+                  <a href="/service/iaq" className="hover:text-tr-skyBlue block px-4 py-2">Indoor Air Quality Products</a>
+              </div>
             </div>
+            
             <Link href="/booking" className="hover:text-tr-skyBlue">BOOKING</Link>
           </ul>
         </div>
