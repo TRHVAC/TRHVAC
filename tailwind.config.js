@@ -17,6 +17,7 @@ module.exports = {
         'tr-blue': '#17366E',
         'tr-silver': '##D6D5D1',
         'tr-lightGray': '#F6F6F6',
+        'tr-footerGray': '#A1A1A1',
       },
       fontFamily:{
         sans:['Roboto', "Arial"],
