@@ -15,7 +15,7 @@ export default function Navbar() {
         </div>
         <div className="flexcenter">
           <ul className="flex gap-8">
-            <li className="flexcenter"><div className="mr-1"><MapIcon/></div>L3P 6Y5, North York, ON</li>
+            <li className="flexcenter"><div className="mr-1"><MapIcon/></div><Link href="https://www.google.com/maps/place/L3P+6Y5+%EC%98%A8%ED%83%80%EB%A6%AC%EC%98%A4+%EB%A7%88%ED%81%AC%ED%97%98/@43.8831285,-79.2672715,17z/data=!3m1!4b1!4m6!3m5!1s0x89d4d63d214740bb:0x5a68fbad18e633!8m2!3d43.8831802!4d-79.2643196!16s%2Fg%2F1tfmpcmm?entry=ttu" className="hover:text-tr-skyBlue">L3P 6Y5, North York, ON</Link></li>
             <li className="flexcenter"><div className="mr-1"><MailIcon/></div><Link href="mailto:recipient@example.com" className="hover:text-tr-skyBlue">trhvac@hotmail.com</Link></li>
             <Link className="hover:text-tr-skyBlue flexcenter mr-5" href="https://www.instagram.com/trhvac/"><div className="mr-1"><InstagramIcon/></div>trhvac</Link>
           </ul>
