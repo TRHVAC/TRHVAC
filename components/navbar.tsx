@@ -5,6 +5,12 @@ import {MapIcon} from '@components/icons/nav/MapIcon'
 import {MailIcon} from '@components/icons/nav/MailIcon'
 import {InstagramIcon} from "./icons/nav/InstagramIcon";
 
+const dropdownItems = [
+  { title: 'Heating', queryName: 'heating' },
+  { title: 'Cooling', queryName: 'cooling' },
+  { title: 'Water Heaters', queryName: 'waterheater' },
+  { title: 'Indoor Air Quality Products', queryName: 'iaq' },
+];
 
 export default function Navbar() {
   return (
@@ -27,20 +33,27 @@ export default function Navbar() {
           <Link href='/'>TR HVAC</Link>
         </div>
         <div className="flexcenter text-lg">
-          <ul className="flex gap-16 ">
-            <Link href="/" className="hover:text-tr-skyBlue">HOME</Link>
+          <ul className="flex">
+            <Link href="/" className="hover:text-tr-skyBlue px-7 py-7">HOME</Link>
 
-            <div className="group">
+            <div className="group px-7 py-7 cursor-pointer">
               <div className="group-hover:text-tr-skyBlue">SERVICE</div>
-              <div className="absolute drop-shadow-lg bg-tr-lightGray z-10 hidden group-hover:block">
-                  <a href="/service/heating" className="hover:text-tr-skyBlue block px-4 py-2">Heating</a>
-                  <a href="/service/cooling" className="hover:text-tr-skyBlue block px-4 py-2">Cooling</a>
-                  <a href="/service/waterheater" className="hover:text-tr-skyBlue block px-4 py-2">Water Heaters</a>
-                  <a href="/service/iaq" className="hover:text-tr-skyBlue block px-4 py-2">Indoor Air Quality Products</a>
+              <div className="absolute drop-shadow-lg bg-tr-lightGray z-10 hidden group-hover:block mt-7">
+                  {dropdownItems.map((menu, i)=>(
+                    <Link
+                      key={`${menu.title}-${i}`}
+                      href={`/service/${menu.queryName}`}
+                      className="hover:text-tr-skyBlue block px-4 py-2"
+                    >
+                      <div>
+                        {menu.title}
+                      </div>
+                    </Link>
+                  ))}
               </div>
             </div>
             
-            <Link href="/booking" className="hover:text-tr-skyBlue">BOOKING</Link>
+            <Link href="/booking" className="hover:text-tr-skyBlue px-7 py-7">BOOKING</Link>
           </ul>
         </div>
         <div className="bg-tr-skyBlue text-white flex gap-3 items-center ">

@@ -69,7 +69,7 @@ const Booking: NextPage = () => {
               <span className='flex gap-1'><PhoneIconBook/>(647) 522 - 5652</span>
               <span className='flex gap-1'><MapIcon/>L3P6Y5, North York, ON</span>
             </div>
-            <div className='py-4'><Image src="/../public/booking/booking-person.jpg" alt="image of a person" width="180" height="250"/></div>
+            <div className='py-4'><Image src="/../public/booking/booking-person.jpg" alt="image of a person" width="180" height="250" /></div>
           </div>
         </div>
 
