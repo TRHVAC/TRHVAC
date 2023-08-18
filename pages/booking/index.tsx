@@ -60,19 +60,19 @@ const Booking: NextPage = () => {
             <div className="flex flex-col gap-1">
               <div className='text-tr-blue font-semibold'>
                 <span>
-                  Call <span className="text-tr-red"><Link href="tel:647-522-5652">(647) 522-5652</Link></span> or{' '}
+                  Call <span className="text-tr-red"><Link href="tel:647-522-5652">(647) 522-5652</Link></span><br/> or{' '}
                   <span className="text-tr-skyBlue">book online</span> here.
                 </span>
               </div>
-              
               <span>Monday - Saturday</span>
-              <span>9:00 am - 7:00 pm</span>
+              <span>09:00 am - 07:00 pm</span>
               <span className='flex gap-1'><PhoneIconBook/>(647) 522 - 5652</span>
               <span className='flex gap-1'><MapIcon/>L3P6Y5, North York, ON</span>
             </div>
-            <div className="w-48 h-60 mt-3 bg-yellow-300">image of a person</div>
+            <div className='py-4'><Image src="/../public/booking/booking-person.jpg" alt="image of a person" width="180" height="250" /></div>
           </div>
         </div>
+
         <div className="w-3/5 border-2 rounded-t-md shadow-xl mb-8 pb-5 overflow-hidden border-blue-500">
           <div className="w-full m-0 text-center p-3 bg-blue-500 hover:bg-blue-600 text-white  px-4 border border-gray-300  rounded-t-md shadow-sm font-medium focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:outline-none pb-3 text-base">
             Book Online

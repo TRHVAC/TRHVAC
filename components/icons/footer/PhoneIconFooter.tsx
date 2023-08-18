@@ -2,9 +2,9 @@ import * as React from "react"
 const PhoneIconFooter = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    fill="none"
+    fill="#000000"
     stroke="currentColor"
-    strokeWidth={1.5}
+    strokeWidth={0}
     className="w-6 h-6"
     viewBox="0 0 28 28"
   >
