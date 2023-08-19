@@ -15,6 +15,10 @@ import { FurnaceIcon } from '@components/icons/home/FurnaceIcon';
 import { GasLineIcon } from '@components/icons/home/GasLineIcon';
 import { MaintenanceIcon } from '@components/icons/home/MaintenanceIcon';
 import { TanklessIcon } from '@components/icons/home/TanklessIcon';
+import StarIcon from '@components/icons/home/ReviewStarIcon';
+import ReviewCustomerA from '@components/icons/home/ReviewCustomerA';
+import ReviewCustomerB from '@components/icons/home/ReviewCustomerB';
+import ReviewCustomerC from '@components/icons/home/ReviewCustomerC';
 
 const serviceItems = [
   { title: 'Heating', image: ServiceHeating, queryName: 'heating' },
@@ -32,7 +36,30 @@ const specialtyItems = [
   { title: 'Boiler', icon: <BoilerIcon /> },
 ];
 
+const reviewItems = [
+  { 
+    name: 'Sungkyu Jee', 
+    date: 'a month ago', 
+    image: <ReviewCustomerA/>,
+    review: 'Well, it is hard to find or impossible to find any negativity on his workmanship, communication, manner, and everything. His price is fair and it comes with nice professional manner and workmanship.'
+  },
+  { 
+    name: 'Ralph Lee', 
+    date: 'a year ago', 
+    image: <ReviewCustomerB/>,
+    review: 'Most reliable tech!!!! Strongly suggest.'
+  },
+  { 
+    name: 'Kevin', 
+    date: 'a year ago', 
+    image: <ReviewCustomerC/>,
+    review: 'In a nutshell, he is the best in this field!!!'
+  },
+]
+
 const CUR_YEAR = new Date().getFullYear();
+
+const customerReview = "https://www.google.com/maps/place/TR+Heating+and+Cooling/@43.7978857,-79.4221016,17z/data=!4m8!3m7!1s0x882b2d1df0cb1bbb:0x93d9b238c86d3b1a!8m2!3d43.7978819!4d-79.4195267!9m1!1b1!16s%2Fg%2F11qhjgfkq6?entry=ttu"
 
 export default function Home() {
   return (
@@ -164,6 +191,43 @@ export default function Home() {
               );
             })}
           </div>
+        </div>
+      </div>
+
+      {/* Customer reviews section */}
+      <div className="flexcenter flex-col mt-10">
+        <div className='py-4 text-tr-blue text-xl font-bold'>
+          Customer Reviews
+        </div>
+        <div className='text-tr-skyBlue'>
+          <Link href={customerReview}>See all reviews</Link>
+        </div>
+
+        <div className='grid grid-cols-3 px-4 py-4'>
+          {reviewItems.map((item, i)=>(
+            <div 
+              className='flex-col px-4 py-4' 
+              key={`${item.name}-${i}`}
+            >
+              <div className='relative bg-tr-lightGray speech-bubble px-4 py-4'>
+                <div className='flex mb-3'>
+                  <StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/>
+                </div>
+                <div className='text-sm'>
+                  {item.review}
+                </div>
+              </div>
+              <div className='flex'>
+                <div className='px-6 py-6'>
+                  {item.image}
+                </div>
+                <div className='py-6'>
+                  {item.name}<br/>
+                  {item.date}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
