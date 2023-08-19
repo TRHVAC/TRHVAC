@@ -15,6 +15,7 @@ import { FurnaceIcon } from '@components/icons/home/FurnaceIcon';
 import { GasLineIcon } from '@components/icons/home/GasLineIcon';
 import { MaintenanceIcon } from '@components/icons/home/MaintenanceIcon';
 import { TanklessIcon } from '@components/icons/home/TanklessIcon';
+import StarIcon from '@components/icons/home/StarIcon';
 
 const serviceItems = [
   { title: 'Heating', image: ServiceHeating, queryName: 'heating' },
@@ -32,7 +33,13 @@ const specialtyItems = [
   { title: 'Boiler', icon: <BoilerIcon /> },
 ];
 
+// const reviewItems = [
+//   { title: }
+// ]
+
 const CUR_YEAR = new Date().getFullYear();
+
+const customerReview = "https://www.google.com/maps/place/TR+Heating+and+Cooling/@43.7978857,-79.4221016,17z/data=!4m8!3m7!1s0x882b2d1df0cb1bbb:0x93d9b238c86d3b1a!8m2!3d43.7978819!4d-79.4195267!9m1!1b1!16s%2Fg%2F11qhjgfkq6?entry=ttu"
 
 export default function Home() {
   return (
@@ -163,6 +170,70 @@ export default function Home() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </div>
+
+      {/* Customer reviews section */}
+      <div className="flexcenter flex-col mt-10 bg-tr-lightGray">
+        <div className='py-4 text-tr-blue text-xl font-bold'>Customer Reviews</div>
+        <div className='text-tr-skyBlue'>
+          <Link href={customerReview}>See all reviews</Link>
+        </div>
+        <div className='flex-col py-4 mb-4'>
+          <div className='relative bg-tr-skyBlue speech-bubble px-4 py-4'>
+            <div className='flex'>
+              <StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/>
+            </div>
+            <div>
+              <span className='font-bold'>Positive:</span> Professionalism, Punctuality, Quality, Responsiveness, Value<br/>
+              Well, it is hard to find or impossible to find any negativity on his workmanship, communication, manner, and everything. His price is fair and it comes with nice professional manner and workmanship. 
+            </div>
+          </div>
+          <div className='flex'>
+            <div>
+              image
+            </div>
+            <div>
+              Sungkyu Lee
+            </div>
+          </div>
+        </div><div className='flex-col py-4 mb-4'>
+          <div className='relative bg-tr-skyBlue speech-bubble px-4 py-4'>
+            <div className='flex'>
+              <StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/>
+            </div>
+            <div>
+              <span className='font-bold'>Positive:</span> Professionalism, Punctuality, Quality, Responsiveness, Value<br/>
+              Well, it is hard to find or impossible to find any negativity on his workmanship, communication, manner, and everything. His price is fair and it comes with nice professional manner and workmanship. 
+            </div>
+          </div>
+          <div className='flex'>
+            <div>
+              image
+            </div>
+            <div>
+              Sungkyu Lee
+            </div>
+          </div>
+        </div>
+        <div className='flex-col py-4 mb-4'>
+          <div className='relative bg-tr-skyBlue speech-bubble px-4 py-4'>
+            <div className='flex'>
+              <StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/>
+            </div>
+            <div>
+              <span className='font-bold'>Positive:</span> Professionalism, Punctuality, Quality, Responsiveness, Value<br/>
+              Well, it is hard to find or impossible to find any negativity on his workmanship, communication, manner, and everything. His price is fair and it comes with nice professional manner and workmanship. 
+            </div>
+          </div>
+          <div className='flex'>
+            <div>
+              image
+            </div>
+            <div>
+              Sungkyu Lee
+            </div>
           </div>
         </div>
       </div>

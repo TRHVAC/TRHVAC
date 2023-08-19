@@ -23,6 +23,7 @@ export default function Navbar() {
         </div>
         <div className="flexcenter">
           <ul className="flex gap-8">
+
             <li className="flexcenter">
               <Link 
                 href={trGoogleLink}
@@ -30,13 +31,15 @@ export default function Navbar() {
                   <div className="mr-1"><MapIcon/></div>L3P 6Y5, North York, ON
                 </Link>
             </li>
-            <li className="">
+
+            <li>
               <Link 
                 href="mailto:recipient@example.com" 
                 className="hover:text-tr-skyBlue flex">
                   <div className="mr-1"><MailIcon/></div>trhvac@hotmail.com
               </Link>
             </li>
+
             <Link 
               href="https://www.instagram.com/trhvac/" 
               className="hover:text-tr-skyBlue flexcenter mr-5" >
@@ -47,33 +50,33 @@ export default function Navbar() {
       </div>
 
       <div className="relative justify-between flex bg-tr-lightGray drop-shadow-lg sticky top-0 z-[1000]">
+
         <div className="flexcenter text-4xl font-extrabold text-tr-skyBlue ml-5 font-sans ">
           <Link href='/'>TR HVAC</Link>
         </div>
-        <div className="flexcenter text-lg">
-          <ul className="flex">
-            <Link href="/" className="hover:text-tr-skyBlue px-7 py-7">HOME</Link>
 
-            <div className="group px-7 py-7 cursor-pointer">
-              <div className="group-hover:text-tr-skyBlue">SERVICE</div>
-              <div className="absolute drop-shadow-lg bg-tr-lightGray z-10 hidden group-hover:block mt-7">
-                  {serviceItems.map((menu, i)=>(
-                    <Link
-                      key={`${menu.title}-${i}`}
-                      href={`/service/${menu.queryName}`}
-                      className="hover:text-tr-skyBlue block px-4 py-2"
-                    >
-                      <div>
-                        {menu.title}
-                      </div>
-                    </Link>
-                  ))}
-              </div>
+        <div className="flexcenter text-lg flex">
+          <Link href="/" className="hover:text-tr-skyBlue px-7 py-7">HOME</Link>
+
+          <div className="group px-7 py-7 cursor-pointer">
+            <div className="group-hover:text-tr-skyBlue">SERVICE</div>
+            <div className="absolute drop-shadow-lg bg-tr-lightGray z-10 hidden group-hover:block mt-7">
+                {serviceItems.map((menu, i)=>(
+                  <Link
+                    key={`${menu.title}-${i}`}
+                    href={`/service/${menu.queryName}`}
+                    className="hover:text-tr-skyBlue block px-4 py-2"
+                  >
+                    <div>
+                      {menu.title}
+                    </div>
+                  </Link>
+                ))}
             </div>
-            
+          </div>
             <Link href="/booking" className="hover:text-tr-skyBlue px-7 py-7">BOOKING</Link>
-          </ul>
         </div>
+
         <div className="bg-tr-skyBlue text-white flex gap-3 items-center ">
           <div className="ml-4">
             <div className="bg-white p-3"><PhoneIcon/></div>

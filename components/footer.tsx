@@ -34,6 +34,7 @@ export default function Footer() {
     <footer>
       <div className="bg-black text-white ">
         <ul className="flex justify-between">
+
           <li className="px-6 py-6">
             <div className="text-2xl font-semibold mb-4">Contact us</div>
             {contactItems.map((contact, i)=>(
@@ -43,11 +44,13 @@ export default function Footer() {
                 </Link>
             ))}
           </li>
+
           <li className="px-6 py-6">
             <div className="text-2xl font-semibold mb-4">Hours</div>
               <div className="mb-1">Monday - Saturday</div>
               <div className="mb-1">09:00 am - 19:00 pm</div>
           </li>
+
           <li className="px-6 py-6">
             <div className="text-2xl font-semibold mb-4">Our Products</div>
             {serviceItems.map((service, i)=>(
@@ -56,6 +59,7 @@ export default function Footer() {
               </Link>
             ))}
           </li>
+
           <li className="px-6 py-6">
             <div className="text-2xl font-semibold mb-4">Our Service</div>
             {specialtyItems.map((specialty, i)=>(
