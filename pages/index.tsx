@@ -218,7 +218,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex'>
-                <div className='px-6 py-6'>
+                <div className='px-4 py-6'>
                   {item.image}
                 </div>
                 <div className='py-6'>
