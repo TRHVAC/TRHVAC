@@ -67,7 +67,11 @@ export default function Footer() {
           <li className="px-6 py-6">
             <div className="text-2xl font-semibold mb-4">Our Service</div>
             {specialtyItems.map((specialty, i)=>(
-              <div className="mb-1">{specialty.title}</div>
+              <div 
+                className="mb-1" 
+                key={`${specialty.title}-${i}`}
+                >{specialty.title}
+              </div>
             ))}
           </li>
         </ul>
