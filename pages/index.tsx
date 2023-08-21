@@ -237,6 +237,17 @@ export default function Home() {
       </div>
 
       {/* Our Previous Work section */}
+      <div className='bg-tr-lightGray flex flex-col flexcenter'>
+        <div className="font-bold text-tr-skyBlue text-xl px-2 py-2 mt-2 mb-2">
+          Our Previous Work
+        </div>
+        <div className='flex mb-8'>
+          <div className='mr-2'>boxes</div>
+          <div className='mr-2'>boxes</div>
+          <div className='mr-2'>boxes</div>
+        </div>
+      </div>
+
     </div>
   );
 }
