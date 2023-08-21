@@ -38,7 +38,9 @@ export default function Footer() {
           <li className="px-6 py-6">
             <div className="text-2xl font-semibold mb-4">Contact us</div>
             {contactItems.map((contact, i)=>(
-                <Link href={contact.ref} className="hover:text-tr-footerGray flex mb-1">
+                <Link 
+                  key={`${contact.title}-${i}`}
+                  href={contact.ref} className="hover:text-tr-footerGray flex mb-1">
                   <div className="invert mr-2">{contact.icon}</div>
                   {contact.title}
                 </Link>
@@ -54,7 +56,9 @@ export default function Footer() {
           <li className="px-6 py-6">
             <div className="text-2xl font-semibold mb-4">Our Products</div>
             {serviceItems.map((service, i)=>(
-              <Link href={`/service/${service.queryName}`} className="hover:text-tr-footerGray">
+              <Link 
+                key={`${service.title}-${i}`}
+                href={`/service/${service.queryName}`} className="hover:text-tr-footerGray">
                 <div className="mb-1">{service.title}</div>
               </Link>
             ))}
