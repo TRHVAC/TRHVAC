@@ -1,5 +1,7 @@
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import { useMemo } from "react";
+import PhoneIconFooter from "./icons/footer/PhoneIconFooter";
+import { MapIcon } from "./icons/nav/MapIcon";
 //
 // .App {
 //   height: 100vh;
@@ -44,8 +46,18 @@ const App = () => {
         <div className="text-white flex flex-col gap-1">
           <span>Monday - Saturday</span>
           <span>9:00 am - 7:00 pm</span>
-          <span>(647) 522 - 5652</span>
-          <span>L3P6Y5, North York, ON</span>
+          <span className="flex">
+            <div className="invert">
+              <PhoneIconFooter/>
+            </div>
+            (647) 522 - 5652
+          </span>
+          <span className="flex">
+            <div className="invert mr-2">
+              <MapIcon/>
+            </div>
+            L3P6Y5, North York, ON
+          </span>
         </div>
       </div>
     </div>
