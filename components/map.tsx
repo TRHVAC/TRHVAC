@@ -22,7 +22,7 @@ const App = () => {
 
   return (
     <div className=" flex flex-row w-full h-56 mt-10 justify-center">
-      <div className="h-96 w-96">
+      <div className="">
         {!isLoaded ? (
           <h1>Loading...</h1>
         ) : (
@@ -37,8 +37,8 @@ const App = () => {
           </GoogleMap>
         )}
       </div>
-      <div className="bg-blue-400 flex flex-col justify-center items-center h-56 min-w-96 w-96 gap-3">
-        <button className="bg-red-500 text-white px-2 py-3 font-semibold">
+      <div className="bg-tr-skyBlue flex flex-col justify-center items-center h-56 min-w-96 w-96 gap-3">
+        <button className="bg-tr-red text-white px-2 py-3 font-semibold">
           Book a service
         </button>
         <div className="text-white flex flex-col gap-1">

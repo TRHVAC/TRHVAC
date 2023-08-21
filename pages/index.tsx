@@ -19,6 +19,7 @@ import StarIcon from '@components/icons/home/ReviewStarIcon';
 import ReviewCustomerA from '@components/icons/home/ReviewCustomerA';
 import ReviewCustomerB from '@components/icons/home/ReviewCustomerB';
 import ReviewCustomerC from '@components/icons/home/ReviewCustomerC';
+import Map from '@components/map';
 
 const serviceItems = [
   { title: 'Heating', image: ServiceHeating, queryName: 'heating' },
@@ -194,6 +195,10 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Google Map section */}
+      <Map/>
+
+
       {/* Customer reviews section */}
       <div className="flexcenter flex-col mt-10">
         <div className='py-4 text-tr-blue text-xl font-bold'>
@@ -209,7 +214,7 @@ export default function Home() {
               className='flex-col px-4 py-4' 
               key={`${item.name}-${i}`}
             >
-              <div className='relative bg-tr-lightGray speech-bubble px-4 py-4'>
+              <div className='relative bg-tr-lightGray speech-bubble px-4 py-4 shadow-xl'>
                 <div className='flex mb-3'>
                   <StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/>
                 </div>
@@ -218,7 +223,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex'>
-                <div className='px-6 py-6'>
+                <div className='px-4 py-6'>
                   {item.image}
                 </div>
                 <div className='py-6'>
@@ -230,6 +235,8 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      {/* Our Previous Work section */}
     </div>
   );
 }
