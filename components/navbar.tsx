@@ -26,13 +26,15 @@ export default function Navbar() {
         <div className="flexcenter text-4xl font-extrabold text-tr-skyBlue ml-5 font-sans ">
           <Link href='/'>TR HVAC</Link>
         </div>
-        <div className="flexcenter text-lg">
-          <ul className="flex gap-16 ">
-            <Link href="/" className="hover:text-tr-skyBlue">HOME</Link>
 
-            <div className="group">
+        <div className="flexcenter text-lg">
+
+          <ul className="flex">
+            <Link href="/" className="hover:text-tr-skyBlue px-5 py-7">HOME</Link>
+
+            <div className="group px-5 py-7 cursor-pointer">
               <div className="group-hover:text-tr-skyBlue">SERVICE</div>
-              <div className="absolute drop-shadow-lg bg-tr-lightGray z-10 hidden group-hover:block">
+              <div className="absolute drop-shadow-lg bg-tr-lightGray z-10 hidden group-hover:block mt-7">
                   <a href="/service/heating" className="hover:text-tr-skyBlue block px-4 py-2">Heating</a>
                   <a href="/service/cooling" className="hover:text-tr-skyBlue block px-4 py-2">Cooling</a>
                   <a href="/service/waterheater" className="hover:text-tr-skyBlue block px-4 py-2">Water Heaters</a>
@@ -40,9 +42,11 @@ export default function Navbar() {
               </div>
             </div>
             
-            <Link href="/booking" className="hover:text-tr-skyBlue">BOOKING</Link>
+            <Link href="/booking" className="hover:text-tr-skyBlue px-5 py-7">BOOKING</Link>
           </ul>
+          
         </div>
+
         <div className="bg-tr-skyBlue text-white flex gap-3 items-center ">
           <div className="ml-4">
             <div className="bg-white p-3"><PhoneIcon/></div>
