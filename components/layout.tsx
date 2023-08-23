@@ -13,9 +13,9 @@ export default function Layout({ children }: { children: ReactNode }) {
         <Seo />
 
         <main>{children}</main>
-
-        <Footer />
       </div>
+
+      <Footer />
     </>
   );
 }

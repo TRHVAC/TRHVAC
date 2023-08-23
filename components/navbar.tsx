@@ -1,25 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { PhoneIcon } from '@components/icons/nav/PhoneIcon';
-import { MapIcon } from '@components/icons/nav/MapIcon';
-import { MailIcon } from '@components/icons/nav/MailIcon';
-import {
-  TR_EMAIL_ADDRESS,
-  TR_GOOGLE_LINK,
-  TR_INSTAGRAM_LINK,
-  TR_TEL_NUMBER,
-} from '@utils/constants';
+import { TR_SERVICE_ITEMS, TR_CONTACT_INFO } from '@utils/constants';
 import NAV_LOGO from '@public/home/nav_logo.png';
-
-import { InstagramIcon } from './icons/nav/InstagramIcon';
-
-const serviceItems = [
-  { title: 'Heating', queryName: 'heating' },
-  { title: 'Cooling', queryName: 'cooling' },
-  { title: 'Water Heaters', queryName: 'waterheater' },
-  { title: 'Indoor Air Quality Products', queryName: 'iaq' },
-];
 
 export default function Navbar() {
   return (
@@ -31,26 +14,18 @@ export default function Navbar() {
         </Link>
 
         <div className="flexcenter gap-5 mr-2">
-          <Link href={TR_GOOGLE_LINK} className="hover:text-tr-skyBlue flexcenter gap-1">
-            <MapIcon />
-            L3P 6Y5, North York, ON
-          </Link>
-
-          <Link
-            href={TR_EMAIL_ADDRESS}
-            className="hover:text-tr-skyBlue flexcenter gap-1"
-          >
-            <MailIcon />
-            trhvac@hotmail.com
-          </Link>
-
-          <Link
-            href={TR_INSTAGRAM_LINK}
-            className="hover:text-tr-skyBlue flexcenter gap-1"
-          >
-            <InstagramIcon />
-            trhvac
-          </Link>
+          {['Address', 'Email', 'Instagram'].map((item, index) => {
+            return (
+              <Link
+                href={TR_CONTACT_INFO[item].ref}
+                key={`${item}-${index}`}
+                className="hover:text-tr-skyBlue flexcenter gap-1"
+              >
+                {TR_CONTACT_INFO[item].icon()}
+                {TR_CONTACT_INFO[item].title}
+              </Link>
+            );
+          })}
         </div>
       </div>
 
@@ -72,13 +47,13 @@ export default function Navbar() {
             <div className="group-hover:text-tr-skyBlue">SERVICE</div>
 
             <div className="absolute drop-shadow-lg bg-tr-lightGray z-10 hidden group-hover:block mt-7">
-              {serviceItems.map((menu, i) => (
+              {TR_SERVICE_ITEMS.map((item, i) => (
                 <Link
-                  key={`${menu.title}-${i}`}
-                  href={`/service/${menu.queryName}`}
+                  key={`${item.title}-${i}`}
+                  href={`/service/${item.queryName}`}
                   className="hover:text-tr-skyBlue block px-4 py-2"
                 >
-                  <div>{menu.title}</div>
+                  <div>{item.title}</div>
                 </Link>
               ))}
             </div>
@@ -91,14 +66,14 @@ export default function Navbar() {
 
         <div className="bg-tr-skyBlue gap-3 flexcenter pr-3">
           <div className="bg-white p-3 ml-4">
-            <PhoneIcon />
+            {TR_CONTACT_INFO['Phone'].icon('#FD2156', 26, 26)}
           </div>
 
           <div>
             <div className="text-tr-blue font-medium text-sm mb-2">Mon-Sat 9am-7pm</div>
 
-            <Link className="font-bold text-white" href={TR_TEL_NUMBER}>
-              (647) 522-5652
+            <Link className="font-bold text-white" href={TR_CONTACT_INFO['Phone'].ref}>
+              {TR_CONTACT_INFO['Phone'].title}
             </Link>
           </div>
         </div>

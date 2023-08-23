@@ -19,8 +19,8 @@ module.exports = {
         'tr-lightGray': '#F6F6F6',
         'tr-footerGray': '#A1A1A1',
       },
-      fontFamily:{
-        sans:['Roboto', "Arial"],
+      fontFamily: {
+        sans: ['Roboto', 'Arial'],
       },
     },
   },
