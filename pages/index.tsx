@@ -2,34 +2,43 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import Hero from '@components/hero';
-import ServiceImg from '@public/home/service.jpg';
-import ServiceHeating from '@public/home/service-heating.jpg';
-import ServiceCooling from '@public/home/service-cooling.jpg';
-import ServiceIAQ from '@public/home/service-iaq.jpg';
-import ServiceWaterHeater from '@public/home/service-water-heater.jpg';
+
 import AboutImage from '@public/home/about.jpg';
 import AdvantageBanner from '@public/home/advantage.jpg';
-import { ACIcon } from '@components/icons/home/ACIcon';
-import { BoilerIcon } from '@components/icons/home/BoilerIcon';
-import { FurnaceIcon } from '@components/icons/home/FurnaceIcon';
-import { GasLineIcon } from '@components/icons/home/GasLineIcon';
-import { MaintenanceIcon } from '@components/icons/home/MaintenanceIcon';
-import { TanklessIcon } from '@components/icons/home/TanklessIcon';
+import ServiceImg from '@public/home/service.jpg';
+import { StarIcon } from '@components/icons/StarIcon';
+import { ReviewCustomerA } from '@components/icons/home/ReviewCustomerA';
+import { ReviewCustomerB } from '@components/icons/home/ReviewCustomerB';
+import { ReviewCustomerC } from '@components/icons/home/ReviewCustomerC';
+import Map from '@components/map';
+import {
+  TR_GOOGLE_REVIEW_LINK,
+  TR_SERVICE_ITEMS,
+  TR_SPECIALTY_ITEMS,
+} from '@utils/constants';
+import Responsive from '@components/carousel';
 
-const serviceItems = [
-  { title: 'Heating', image: ServiceHeating, queryName: 'heating' },
-  { title: 'Cooling', image: ServiceCooling, queryName: 'cooling' },
-  { title: 'Water Heaters', image: ServiceWaterHeater, queryName: 'waterheater' },
-  { title: 'Indoor Air Quality Products', image: ServiceIAQ, queryName: 'iaq' },
-];
 
-const specialtyItems = [
-  { title: 'A/C', icon: <ACIcon /> },
-  { title: 'Furnace', icon: <FurnaceIcon /> },
-  { title: 'Maintenance', icon: <MaintenanceIcon /> },
-  { title: 'Gas Line', icon: <GasLineIcon /> },
-  { title: 'Tankless', icon: <TanklessIcon /> },
-  { title: 'Boiler', icon: <BoilerIcon /> },
+const reviewItems = [
+  {
+    name: 'Sungkyu Jee',
+    date: 'a month ago',
+    image: <ReviewCustomerA />,
+    review:
+      'Well, it is hard to find or impossible to find any negativity on his workmanship, communication, manner, and everything. His price is fair and it comes with nice professional manner and workmanship.',
+  },
+  {
+    name: 'Ralph Lee',
+    date: 'a year ago',
+    image: <ReviewCustomerB />,
+    review: 'Most reliable tech!!!! Strongly suggest.',
+  },
+  {
+    name: 'Kevin',
+    date: 'a year ago',
+    image: <ReviewCustomerC />,
+    review: 'In a nutshell, he is the best in this field!!!',
+  },
 ];
 
 const CUR_YEAR = new Date().getFullYear();
@@ -46,13 +55,13 @@ export default function Home() {
 
         <div className="flex">
           <div className="flex-1">
-            <Image src={ServiceImg} alt="home-service" />
+            <Image src={ServiceImg} alt="home-service" placeholder="blur" />
           </div>
 
           <div className="w-3" />
 
           <div className="grid gap-4 grid-cols-2 flex-1">
-            {serviceItems.map((service, index) => (
+            {TR_SERVICE_ITEMS.map((service, index) => (
               <Link
                 key={`${service.title}-${index}`}
                 href={`/service/${service.queryName}`}
@@ -152,20 +161,63 @@ export default function Home() {
           </div>
 
           <div className="flex flex-row mt-5 font-medium">
-            {specialtyItems.map((item, index) => {
+            {TR_SPECIALTY_ITEMS.map((item, index) => {
               return (
                 <div
                   className="flexcenter flex-col flex-1"
                   key={`${item.title}-${index}`}
                 >
                   <div className="mb-2">{item.title}</div>
-                  {item.icon}
+
+                  <item.icon />
                 </div>
               );
             })}
           </div>
         </div>
       </div>
+
+      {/* Google Map section */}
+      <Map />
+
+      {/* Customer reviews section */}
+      <div className="flexcenter flex-col mt-10">
+        <div className="py-4 text-tr-blue text-xl font-bold">Customer Reviews</div>
+
+        <Link className="text-tr-skyBlue" href={TR_GOOGLE_REVIEW_LINK}>
+          See all reviews
+        </Link>
+
+        <div className="grid grid-cols-3 p-4">
+          {reviewItems.map((item, i) => (
+            <div className="flex-col p-4" key={`${item.name}-${i}`}>
+              <div className="relative bg-tr-lightGray speech-bubble p-4 shadow-xl">
+                <div className="flex mb-3">
+                  {Array.from({ length: 5 }, (_, index) => (
+                    <StarIcon key={index} />
+                  ))}
+                </div>
+
+                <div className="text-sm">{item.review}</div>
+              </div>
+
+              <div className="flex pt-8 ml-6">
+                <div>{item.image}</div>
+
+                <div className="flex-col ml-4">
+                  <div>{item.name}</div>
+
+                  <div>{item.date}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Our Previous Work section */}
+      <Responsive />
+
     </div>
   );
 }

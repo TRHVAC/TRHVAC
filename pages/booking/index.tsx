@@ -1,15 +1,32 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import Map from '@components/map';
 import type { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { useForm } from 'react-hook-form';
-import { useRouter } from 'next/router';
+
 import useMutation from '@libs/client/useMutation';
 import Hero from '@components/hero';
-import Link from 'next/link';
-import {MapIcon} from '@components/icons/nav/MapIcon';
-import {PhoneIconBook} from'@components/icons/booking/PhoneIconBook';
+import { TR_CONTACT_INFO } from '@utils/constants';
+import BookingPerson from '@public/booking/booking-person.jpg';
+
+export const bookingDetails = (iconColor: string) => {
+  return (
+    <>
+      <div>Monday - Saturday</div>
+
+      <div>09:00 am - 07:00 pm</div>
+
+      <Link href={TR_CONTACT_INFO['Phone'].ref} className="flex items-center gap-2">
+        {TR_CONTACT_INFO['Phone'].icon(iconColor)}
+        {TR_CONTACT_INFO['Phone'].title}
+      </Link>
+
+      <Link href={TR_CONTACT_INFO['Address'].ref} className="flex items-center gap-2">
+        {TR_CONTACT_INFO['Address'].icon(iconColor)}
+        {TR_CONTACT_INFO['Address'].title}
+      </Link>
+    </>
+  );
+};
 
 interface BookingForm {
   email: string;
@@ -52,28 +69,38 @@ const Booking: NextPage = () => {
     <>
       <Hero heroImageCategory="BOOKING" />
 
-      <div className="flex flex-row gap-10 justify-center items-center my-10">
+      <div className="flexcenter flex-row pt-10">
         {/* left text */}
-        <div className="flex flex-row">
-          <div className="flex flex-col gap-1">
-            <h2 className="text-2xl text-tr-blue font-semibold mb-4">We are here for you</h2>
-            <div className="flex flex-col gap-1">
-              <div className='text-tr-blue font-semibold'>
-                <span>
-                  Call <span className="text-tr-red"><Link href="tel:647-522-5652">(647) 522-5652</Link></span><br/> or{' '}
-                  <span className="text-tr-skyBlue">book online</span> here.
-                </span>
-              </div>
-              <span>Monday - Saturday</span>
-              <span>09:00 am - 07:00 pm</span>
-              <span className='flex gap-1'><PhoneIconBook/>(647) 522 - 5652</span>
-              <span className='flex gap-1'><MapIcon/>L3P6Y5, North York, ON</span>
+        <div className="flex flex-col">
+          <h2 className="text-2xl text-tr-blue font-semibold mb-4">
+            We are here for you
+          </h2>
+
+          <div className="flex flex-col gap-1 text-tr-Gray">
+            <div className="text-tr-blue font-semibold whitespace-pre-line">
+              Call{' '}
+              <Link className="text-tr-red" href={TR_CONTACT_INFO['Phone'].ref}>
+                {TR_CONTACT_INFO['Phone'].title}
+              </Link>
+              {'\n'}
+              or <span className="text-tr-skyBlue">book online</span> here.
             </div>
-            <div className='py-4'><Image src="/../public/booking/booking-person.jpg" alt="image of a person" width="180" height="250"/></div>
+
+            {bookingDetails('#676661')}
+          </div>
+
+          <div className="py-4">
+            <Image
+              src={BookingPerson}
+              alt="image of a person"
+              placeholder="blur"
+              width={180}
+            />
           </div>
         </div>
 
-        <div className="w-3/5 border-2 rounded-t-md shadow-xl mb-8 pb-5 overflow-hidden border-blue-500">
+        {/* TODO: Update the form */}
+        <div className="w-3/5 border-2 rounded-t-md shadow-xl mb-8 pb-5 overflow-hidden border-blue-500 ml-10">
           <div className="w-full m-0 text-center p-3 bg-blue-500 hover:bg-blue-600 text-white  px-4 border border-gray-300  rounded-t-md shadow-sm font-medium focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:outline-none pb-3 text-base">
             Book Online
           </div>

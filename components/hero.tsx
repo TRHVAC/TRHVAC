@@ -79,7 +79,7 @@ const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' }) => {
 
           <Link
             href="/booking"
-            className="flexcenter bg-tr-red p-4 w-52 text-2xl absolute bottom-0 mb-14"
+            className="flexcenter bg-tr-red p-4 text-2xl absolute bottom-0 mb-14 font-semibold"
           >
             Book a service
           </Link>
