@@ -5,6 +5,8 @@ import Image from 'next/image';
 
 import { THeroImageCategory } from '@utils/constants';
 import Hero from '@components/hero';
+import Map from '@components/map';
+
 import { ServiceCategory } from './constants';
 
 const ServiceCategoryPage: NextPage = () => {
@@ -51,6 +53,9 @@ const ServiceCategoryPage: NextPage = () => {
           })}
         </div>
       </div>
+
+      {/* Google Map */}
+      <Map />
     </>
   );
 };
