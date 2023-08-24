@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply w-fit sm:w-full;
+  }
+}
+
 @layer components {
   .flexcenter {
     @apply flex items-center justify-center;

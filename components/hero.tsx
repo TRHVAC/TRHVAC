@@ -73,7 +73,7 @@ const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' }) => {
               <div className="sm:pt-7" />
             )}
 
-            <h1 className="text-2xl mt-2 font-bold whitespace-pre-line sm:mt-4 sm:text-4xl ">
+            <h1 className="text-2xl mt-2 pr-14 font-bold whitespace-pre-line sm:mt-4 sm:text-4xl sm:pr-0">
               {HeroBodyContents[heroImageCategory].title}
             </h1>
 

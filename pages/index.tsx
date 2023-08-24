@@ -49,23 +49,25 @@ export default function Home() {
 
       {/* Our Service Section */}
       <div className="flexcenter flex-col mt-10 bg-tr-lightGray">
-        <div className="py-4 text-tr-blue text-xl font-bold">Our Service</div>
+        <div className="py-4 text-tr-blue font-bold text-3xl sm:text-xl ">
+          Our Service
+        </div>
 
         <div className="flex">
-          <div className="flex-1">
+          <div className="hidden sm:flex sm:flex-1">
             <Image src={ServiceImg} alt="home-service" placeholder="blur" />
           </div>
 
-          <div className="w-3" />
+          <div className="hidden sm:block sm:w-3" />
 
-          <div className="grid gap-4 grid-cols-2 flex-1">
+          <div className="grid gap-6 grid-cols-2 flex-1 sm:gap-4">
             {TR_SERVICE_ITEMS.map((service, index) => (
               <Link
                 key={`${service.title}-${index}`}
                 href={`/service/${service.queryName}`}
-                className="relative flexcenter overflow-hidden bg-[#444648A6]"
+                className="relative flexcenter overflow-hidden bg-[#444648A6] h-52 sm:h-auto"
               >
-                <div className="text-xl font-bold text-white z-10 text-center">
+                <div className="text-xl font-bold text-white z-10 text-center sm:text-xl">
                   {service.title}
                 </div>
 
@@ -87,7 +89,7 @@ export default function Home() {
       </div>
 
       {/* About Section */}
-      <div className="flex flex-row mt-16 bg-tr-lightGray">
+      <div className={`flex flex-row mt-16 relative bg-tr-lightGray`}>
         <div className="flex-[2_2_0%] p-10">
           <div className="font-bold text-tr-red text-xl">Your trusted partner</div>
 
@@ -109,7 +111,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex-1 relative">
+        <div className="flex-1 absolute w-full h-full opacity-10 sm:relative sm:w-auto sm:h-auto sm:opacity-100">
           <Image
             src={AboutImage}
             alt="Home-About"
@@ -123,7 +125,7 @@ export default function Home() {
       </div>
 
       {/* Advantage Section */}
-      <div className="flexcenter flex-row relative p-12 mt-24 overflow-hidden bg-tr-blue/80">
+      <div className="grid grid-cols-2 gap-8 relative p-6 mt-24 overflow-hidde bg-[#2C3546B0]/100 sm:bg-tr-blue/80 sm:flexcenter sm:flex-row sm:gap-0 sm:p-12">
         <div className="text-white flex-1 text-center z-10">Service in GTA Area</div>
 
         <div className="text-white flex-1 text-center z-10">Gas & A/C Licensed</div>
@@ -132,15 +134,12 @@ export default function Home() {
 
         <div className="text-white flex-1 text-center z-10">Affordable Price</div>
 
-        <div className="opacity-50">
+        <div className="opacity-20 absolute w-full h-full sm:opacity-50">
           <Image
             src={AdvantageBanner}
             alt={'Home-advantage-banner'}
             placeholder="blur"
             fill
-            style={{
-              objectFit: 'cover',
-            }}
           />
         </div>
       </div>
@@ -153,12 +152,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex-1 px-12">
-          <div className="mt-6 text-tr-red text-xl font-bold text-center">
+        <div className="flex-1 px-12 py-10">
+          <div className="text-tr-red text-2xl font-bold text-center sm:text-xl">
             Our Specialty
           </div>
 
-          <div className="flex flex-row mt-5 font-medium">
+          <div className="grid grid-cols-3 gap-3 mt-5 font-medium sm:flex sm:flex-row sm:gap-0">
             {TR_SPECIALTY_ITEMS.map((item, index) => {
               return (
                 <div

@@ -9,7 +9,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     <>
       <Navbar />
 
-      <div className="m-h-screen h-fit mx-auto w-fit sm:max-w-screen-2xl ">
+      <div className="m-h-screen h-fit max-w-screen-xl sm:max-w-screen-2xl sm:mx-auto">
         <Seo />
 
         <main>{children}</main>

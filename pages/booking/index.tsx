@@ -76,7 +76,7 @@ const Booking: NextPage = () => {
             We are here for you
           </h2>
 
-          <div className="flex flex-col gap-1 text-tr-Gray">
+          <div className="flex flex-col gap-1 text-tr-gray">
             <div className="text-tr-blue font-semibold whitespace-pre-line">
               Call{' '}
               <Link className="text-tr-red" href={TR_CONTACT_INFO['Phone'].ref}>
