@@ -38,51 +38,58 @@ const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' }) => {
   }, [heroImageCategory]);
 
   return (
-    <div className={`px-10 py-10 h-[550px] flex item-center relative`}>
+    <div className={`px-10 py-10 h-72 flex item-center relative sm:h-[550px]`}>
       <div className="-z-10">
         <Image
           src={getHeroImage()}
           alt="test hero"
           placeholder="blur"
           fill
-          style={{
-            objectFit: 'cover',
-          }}
+          className="object-cover object-left"
         />
       </div>
 
-      <div className="flex flex-row">
+      <div className="flex flex-row w-full sm:w-fit">
+        {/* Border Line */}
         <div
           className={`w-20 border-solid border-y-8 border-l-8 ${
             heroImageCategory === 'IAQ' ? 'border-black' : 'border-white'
-          }`}
+          } hidden sm:flex`}
         />
 
         <div
-          className={`flex flex-col pt-20 -ml-10 relative ${
+          className={`flex flex-row items-center py-10 w-full ${
             heroImageCategory === 'IAQ' ? 'text-black' : 'text-white'
-          }`}
+          }
+          sm:justify-between sm:-ml-10 sm:flex-col
+          `}
         >
-          {HeroBodyContents[heroImageCategory].intro ? (
-            <h2 className="text-xl">{HeroBodyContents[heroImageCategory].intro}</h2>
-          ) : (
-            <div className="pt-7" />
-          )}
+          <div className="flex-1">
+            {HeroBodyContents[heroImageCategory].intro ? (
+              <h2 className="text-sm sm:text-xl">
+                {HeroBodyContents[heroImageCategory].intro}
+              </h2>
+            ) : (
+              <div className="sm:pt-7" />
+            )}
 
-          <h1 className="text-4xl font-bold mt-4 whitespace-pre-line">
-            {HeroBodyContents[heroImageCategory].title}
-          </h1>
+            <h1 className="text-2xl mt-2 font-bold whitespace-pre-line sm:mt-4 sm:text-4xl ">
+              {HeroBodyContents[heroImageCategory].title}
+            </h1>
 
-          <h2 className="text-xl mt-8 whitespace-pre-line">
-            {HeroBodyContents[heroImageCategory].subTitle}
-          </h2>
+            <h2 className="text-xl whitespace-pre-line hidden sm:flex sm:mt-8">
+              {HeroBodyContents[heroImageCategory].subTitle}
+            </h2>
+          </div>
 
-          <Link
-            href="/booking"
-            className="flexcenter bg-tr-red p-4 text-2xl absolute bottom-0 mb-14 font-semibold"
-          >
-            Book a service
-          </Link>
+          <div className="flex-1 flex justify-end sm:w-full sm:justify-start sm:flex-none">
+            <Link
+              href="/booking"
+              className="flexcenter bg-tr-red py-3 px-4 text-xl font-semibold w-fit sm:flex-none sm:text-2xl sm:p-4"
+            >
+              Book a service
+            </Link>
+          </div>
         </div>
       </div>
     </div>
