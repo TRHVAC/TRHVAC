@@ -16,8 +16,8 @@ import {
   TR_SERVICE_ITEMS,
   TR_SPECIALTY_ITEMS,
 } from '@utils/constants';
-import Responsive from '@components/carousel';
 
+import Responsive from '@components/carousel';
 
 const reviewItems = [
   {
