@@ -17,6 +17,8 @@ import {
   TR_SPECIALTY_ITEMS,
 } from '@utils/constants';
 
+import Responsive from '@components/carousel';
+
 const reviewItems = [
   {
     name: 'Sungkyu Jee',
@@ -214,6 +216,8 @@ export default function Home() {
       </div>
 
       {/* Our Previous Work section */}
+      <Responsive />
+
     </div>
   );
 }
