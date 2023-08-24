@@ -32,7 +32,7 @@ export default class Responsive extends Component {
         autoplaySpeed: 5000,
         arrows: true,
         prevArrow: <Image src={prevArr} alt='carousel-previous' className='slick-prev' />,
-        nextArrow: <Image src={nextArr} alt='carousel-previous' className='slick-next'  />,
+        nextArrow: <Image src={nextArr} alt='carousel-previous' className='slick-next' />,
         responsive: [
             {
             breakpoint: 1024,
