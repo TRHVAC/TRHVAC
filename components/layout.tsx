@@ -6,14 +6,16 @@ import Seo from './seo';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <div className="m-h-screen h-fit max-w-screen-2xl mx-auto">
-      <Seo />
-
+    <>
       <Navbar />
 
-      <main>{children}</main>
+      <div className="m-h-screen h-fit max-w-screen-xl sm:max-w-screen-2xl sm:mx-auto">
+        <Seo />
+
+        <main>{children}</main>
+      </div>
 
       <Footer />
-    </div>
+    </>
   );
 }
