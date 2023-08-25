@@ -182,17 +182,17 @@ export default function Home() {
 
       {/* Customer reviews section */}
       <div className="flexcenter flex-col mt-10">
-        <div className="py-4 text-tr-blue text-xl font-bold">Customer Reviews</div>
+        <div className="pt-4 text-tr-blue text-xl font-bold">Customer Reviews</div>
 
-        <Link className="text-tr-skyBlue" href={TR_GOOGLE_REVIEW_LINK}>
+        <Link className="text-tr-skyBlue py-4" href={TR_GOOGLE_REVIEW_LINK}>
           See all reviews
         </Link>
 
-        <div className="grid grid-rows-3 sm:grid-cols-3 p-4">
+        <div className="grid items-center grid-rows-3 sm:grid-rows-1 sm:grid-cols-3 px-8 sm:p-4">
           {reviewItems.map((item, i) => (
-            <div className="flex-col p-4" key={`${item.name}-${i}`}>
-              <div className="relative bg-tr-lightGray speech-bubble p-4 shadow-xl">
-                <div className="flex mb-3">
+            <div className="flex-col px-16" key={`${item.name}-${i}`}>
+              <div className="relative bg-tr-lightGray speech-bubble px-8 py-5 shadow-xl">
+                <div className="flex mb-2">
                   {Array.from({ length: 5 }, (_, index) => (
                     <StarIcon key={index} />
                   ))}
