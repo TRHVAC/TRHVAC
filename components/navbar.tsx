@@ -58,8 +58,7 @@ export default function Navbar() {
             </button>
               
           </div>
-          <div className={classNames("absolute sm:hidden drop-shadow-lg bg-tr-lightGray z-10 w-screen h-screen py-4",
-              { hidden: !menuToggle })}>
+          <div className={classNames("absolute sm:hidden drop-shadow-lg bg-tr-lightGray z-10 w-screen h-screen py-4", { hidden: !menuToggle })}>
             <div className='px-8 py-4'>
               <Link href="/" className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4">
                 HOME
@@ -101,7 +100,10 @@ export default function Navbar() {
           
 
           <div className="group px-7 py-7 cursor-pointer">
-            <div className="group-hover:text-tr-skyBlue">SERVICE</div>
+
+            <Link href="/service/" className="group-hover:text-tr-skyBlue">
+              SERVICE
+            </Link>
 
             <div className="absolute drop-shadow-lg bg-tr-lightGray z-10 hidden group-hover:block mt-7">
               {TR_SERVICE_ITEMS.map((item, i) => (

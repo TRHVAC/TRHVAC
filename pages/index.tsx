@@ -181,10 +181,10 @@ export default function Home() {
       
 
       {/* Customer reviews section */}
-      <div className="flexcenter flex-col mt-10">
+      <div className="flexcenter flex-col my-4 mt-8">
         <div className="pt-4 text-tr-blue text-xl font-bold">Customer Reviews</div>
 
-        <Link className="text-tr-skyBlue py-4" href={TR_GOOGLE_REVIEW_LINK}>
+        <Link className="text-tr-skyBlue py-4 mb-3 sm:mb-0" href={TR_GOOGLE_REVIEW_LINK}>
           See all reviews
         </Link>
 
@@ -214,6 +214,7 @@ export default function Home() {
           ))}
         </div>
       </div>
+
       {/* Google Map section */}
       <Map />
       
