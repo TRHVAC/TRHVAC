@@ -13,6 +13,10 @@ import classNames from "classnames";
 
 export default function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const handleDropdown = () => {
+    setOpenDropdown(!openDropdown)
+    }
   return (
     <>
 
@@ -39,7 +43,7 @@ export default function Navbar() {
       </div>
 
       
-      {/* Navbar Section */}
+      {/* Navbar Section - Mobile*/}
       <div className="justify-between flex bg-tr-lightGray drop-shadow-lg sticky top-0 z-[1000]">
         <Link
           className="flexcenter text-4xl font-extrabold text-tr-skyBlue ml-5 font-sans"
@@ -50,7 +54,7 @@ export default function Navbar() {
 
         <div className='px-7 sm:hidden group'>
           <div className='mt-5 mb-5 flexcenter'>
-          <button onClick={() => setMenuToggle(!menuToggle)}>
+          <button onClick={() => {setMenuToggle(!menuToggle); handleDropdown();}}>
               {menuToggle ? (
                 <CloseIcon/>
               ) : (
@@ -61,17 +65,18 @@ export default function Navbar() {
               
           </div>
           <div className={classNames("absolute sm:hidden drop-shadow-lg bg-tr-lightGray z-10 w-screen h-screen py-4",
-              { hidden: !menuToggle })}>
+              { hidden: !menuToggle },
+              `... ${openDropdown ? 'block' : 'hidden'}`)}>
             <div className='px-8 py-4'>
-              <Link href="/" className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4">
-                HOME
+              <Link href="/" className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4" legacyBehavior>
+                <a onClick={handleDropdown}>HOME</a>
               </Link>
             </div>
             <hr/>
 
             <div className='px-8 py-4'>
-              <Link href={'/service/'} className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4">
-                SERVICE
+              <Link href={'/service/'} className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4" legacyBehavior>
+                <a onClick={handleDropdown}>SERVICE</a>
               </Link>
             
               {TR_SERVICE_ITEMS.map((item, i) => (
@@ -87,21 +92,19 @@ export default function Navbar() {
             <hr/>         
 
             <div className='px-8 py-4'>
-              <Link href="/booking" className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4">
-                BOOKING
+              <Link href="/booking" className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4" legacyBehavior>
+                <a onClick={handleDropdown}>BOOKING</a>
               </Link>
             </div>
-            
           </div>
         </div>
 
-        
+        {/* Navbar Section - Mobile*/}
         <div className="flexcenter text-lg flex hidden sm:flex">
           <Link href="/" className="hover:text-tr-skyBlue px-7 py-7">
             HOME
           </Link>
           
-
           <div className="group px-7 py-7 cursor-pointer">
             <div className="group-hover:text-tr-skyBlue">SERVICE</div>
 
