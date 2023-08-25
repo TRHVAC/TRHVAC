@@ -1,12 +1,18 @@
+import React, { useState } from "react";
 import Link from 'next/link';
 import Image from 'next/image';
 
 import { TR_SERVICE_ITEMS, TR_CONTACT_INFO } from '@utils/constants';
 import NAV_LOGO from '@public/home/nav_logo.png';
 import BurgerIcon from '@components/icons/BurgerIcon';
+import CloseIcon from './icons/CloseIcon';
+
+import classNames from "classnames";
+
 
 
 export default function Navbar() {
+  const [menuToggle, setMenuToggle] = useState(false);
   return (
     <>
 
@@ -43,17 +49,25 @@ export default function Navbar() {
         </Link>
 
         <div className='px-7 sm:hidden group'>
-          <div className='mt-5 mb-5'>
-            <BurgerIcon/>
+          <div className='mt-5 mb-5 flexcenter'>
+          <button onClick={() => setMenuToggle(!menuToggle)}>
+              {menuToggle ? (
+                <CloseIcon/>
+              ) : (
+
+                <BurgerIcon/>
+              )}
+            </button>
+              
           </div>
-
-          <div className="absolute drop-shadow-lg bg-tr-lightGray z-10 hidden group-hover:block w-screen h-screen">
-
+          <div className={classNames("absolute sm:hidden drop-shadow-lg bg-tr-lightGray z-10 w-screen h-screen py-4",
+              { hidden: !menuToggle })}>
             <div className='px-8 py-4'>
               <Link href="/" className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4">
                 HOME
               </Link>
             </div>
+            <hr/>
 
             <div className='px-8 py-4'>
               <Link href={'/service/'} className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4">
@@ -64,20 +78,20 @@ export default function Navbar() {
                 <Link
                   key={`${item.title}-${i}`}
                   href={`/service/${item.queryName}`}
-                  className="hover:text-tr-skyBlue block px-8 py-2"
+                  className="hover:text-tr-skyBlue block px-8 py-2 mt-1"
                 >
                   <div>{item.title}</div>
                 </Link>
               ))}
             </div>
-
-            
+            <hr/>         
 
             <div className='px-8 py-4'>
               <Link href="/booking" className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4">
                 BOOKING
               </Link>
             </div>
+            
           </div>
         </div>
 
