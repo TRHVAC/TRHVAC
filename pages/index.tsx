@@ -188,7 +188,7 @@ export default function Home() {
           See all reviews
         </Link>
 
-        <div className="grid grid-cols-3 p-4">
+        <div className="grid grid-rows-3 sm:grid-cols-3 p-4">
           {reviewItems.map((item, i) => (
             <div className="flex-col p-4" key={`${item.name}-${i}`}>
               <div className="relative bg-tr-lightGray speech-bubble p-4 shadow-xl">
