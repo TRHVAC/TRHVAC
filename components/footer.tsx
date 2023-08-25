@@ -6,9 +6,9 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white mt-10">
       <div className="max-w-screen-2xl mx-auto felx-col p-6">
-        <div className="flex justify-between">
+        <div className="flex flex-col sm:flex-row justify-between mx-6 sm:mx-0">
           {/* Contact Section */}
-          <div>
+          <div className='mt-8 sm:mt-4'>
             <div className="text-2xl font-semibold mb-4">Contact us</div>
 
             {['Address', 'Phone', 'Email', 'Instagram'].map((item, index) => {
@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
 
           {/* Hours Section */}
-          <div>
+          <div className='mt-8 sm:mt-4'>
             <div className="text-2xl font-semibold mb-4">Hours</div>
 
             <div className="mb-2">Monday - Saturday</div>
@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
 
           {/* Products Section */}
-          <div>
+          <div className='mt-8 sm:mt-4'>
             <div className="text-2xl font-semibold mb-4">Our Products</div>
             {TR_SERVICE_ITEMS.map((item, index) => (
               <Link
@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
 
           {/* Service Section */}
-          <div>
+          <div className='mt-8 sm:mt-4'>
             <div className="text-2xl font-semibold mb-4">Our Service</div>
             {TR_SPECIALTY_ITEMS.map((item, index) => (
               <div className="mb-1" key={`${item}-${index}`}>
@@ -60,7 +60,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div>&copy; TR HVAC, All Right Reserved.</div>
+        <div className='flex justify-center my-8 sm:justify-start'>&copy; TR HVAC, All Right Reserved.</div>
       </div>
     </footer>
   );
