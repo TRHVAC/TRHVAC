@@ -8,12 +8,12 @@ export default function Navbar() {
   return (
     <>
       {/* Intro Header */}
-      <div className="flex justify-between items-center bg-white">
+      <div className="flex justify-between items-center bg-white ">
         <Link className="ml-10" href="/">
           <Image src={NAV_LOGO} alt="company logo" width={80} height={80} />
         </Link>
 
-        <div className="flexcenter gap-5 mr-2">
+        <div className="flexcenter gap-5 mr-2 ">
           {['Address', 'Email', 'Instagram'].map((item, index) => {
             return (
               <Link
@@ -65,9 +65,11 @@ export default function Navbar() {
         </div>
 
         <div className="bg-tr-skyBlue gap-3 flexcenter pr-3">
-          <div className="bg-white p-3 ml-4">
-            {TR_CONTACT_INFO['Phone'].icon('#FD2156', 26, 26)}
-          </div>
+          <Link href={TR_CONTACT_INFO['Phone'].ref}>
+            <div className="bg-white p-3 ml-4">
+                {TR_CONTACT_INFO['Phone'].icon('#FD2156', 26, 26)}
+            </div>
+          </Link>
 
           <div>
             <div className="text-tr-blue font-medium text-sm mb-2">Mon-Sat 9am-7pm</div>

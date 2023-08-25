@@ -125,6 +125,9 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Our Previous Work section */}
+      <Carousel />
+
       {/* Advantage Section */}
       <div className="grid grid-cols-2 gap-8 relative p-6 mt-24 overflow-hidde bg-[#2C3546B0]/100 sm:bg-tr-blue/80 sm:flexcenter sm:flex-row sm:gap-0 sm:p-12">
         <div className="text-white flex-1 text-center z-10">Service in GTA Area</div>
@@ -175,8 +178,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Google Map section */}
-      <Map />
+      
 
       {/* Customer reviews section */}
       <div className="flexcenter flex-col mt-10">
@@ -212,9 +214,9 @@ export default function Home() {
           ))}
         </div>
       </div>
-
-      {/* Our Previous Work section */}
-      <Carousel />
+      {/* Google Map section */}
+      <Map />
+      
     </div>
   );
 }
