@@ -3,17 +3,20 @@ import Image from 'next/image';
 
 import { TR_SERVICE_ITEMS, TR_CONTACT_INFO } from '@utils/constants';
 import NAV_LOGO from '@public/home/nav_logo.png';
+import BurgerIcon from '@components/icons/BurgerIcon';
+
 
 export default function Navbar() {
   return (
     <>
+
       {/* Intro Header */}
-      <div className="flex justify-between items-center bg-white ">
-        <Link className="ml-10" href="/">
+      <div className="flex justify-between items-center bg-white">
+        <Link className="sm:ml-10 px-3" href="/">
           <Image src={NAV_LOGO} alt="company logo" width={80} height={80} />
         </Link>
-
-        <div className="flexcenter gap-5 mr-2 ">
+        
+        <div className="flexcenter gap-2 sm:gap-5 mr-2 sm:mr-5 text-xs sm:text-sm">
           {['Address', 'Email', 'Instagram'].map((item, index) => {
             return (
               <Link
@@ -29,19 +32,61 @@ export default function Navbar() {
         </div>
       </div>
 
+      
       {/* Navbar Section */}
       <div className="justify-between flex bg-tr-lightGray drop-shadow-lg sticky top-0 z-[1000]">
         <Link
-          className="flexcenter text-4xl font-extrabold text-tr-skyBlue ml-5 font-sans "
+          className="flexcenter text-4xl font-extrabold text-tr-skyBlue ml-5 font-sans"
           href="/"
         >
           TR HVAC
         </Link>
 
-        <div className="flexcenter text-lg flex">
+        <div className='px-7 sm:hidden group'>
+          <div className='mt-5 mb-5'>
+            <BurgerIcon/>
+          </div>
+
+          <div className="absolute drop-shadow-lg bg-tr-lightGray z-10 hidden group-hover:block w-screen h-screen">
+
+            <div className='px-8 py-4'>
+              <Link href="/" className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4">
+                HOME
+              </Link>
+            </div>
+
+            <div className='px-8 py-4'>
+              <Link href={'/service/'} className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4">
+                SERVICE
+              </Link>
+            
+              {TR_SERVICE_ITEMS.map((item, i) => (
+                <Link
+                  key={`${item.title}-${i}`}
+                  href={`/service/${item.queryName}`}
+                  className="hover:text-tr-skyBlue block px-8 py-2"
+                >
+                  <div>{item.title}</div>
+                </Link>
+              ))}
+            </div>
+
+            
+
+            <div className='px-8 py-4'>
+              <Link href="/booking" className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4">
+                BOOKING
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        
+        <div className="flexcenter text-lg flex hidden sm:flex">
           <Link href="/" className="hover:text-tr-skyBlue px-7 py-7">
             HOME
           </Link>
+          
 
           <div className="group px-7 py-7 cursor-pointer">
             <div className="group-hover:text-tr-skyBlue">SERVICE</div>
@@ -63,6 +108,7 @@ export default function Navbar() {
             BOOKING
           </Link>
         </div>
+        
 
         <div className="bg-tr-skyBlue gap-3 flexcenter pr-3">
           <Link href={TR_CONTACT_INFO['Phone'].ref}>
