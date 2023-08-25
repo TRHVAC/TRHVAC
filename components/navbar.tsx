@@ -6,7 +6,6 @@ import { TR_SERVICE_ITEMS, TR_CONTACT_INFO } from '@utils/constants';
 import NAV_LOGO from '@public/home/nav_logo.png';
 import BurgerIcon from '@components/icons/BurgerIcon';
 import CloseIcon from './icons/CloseIcon';
-
 import classNames from "classnames";
 
 
@@ -15,7 +14,6 @@ export default function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
   return (
     <>
-
       {/* Intro Header */}
       <div className="flex justify-between items-center bg-white">
         <Link className="sm:ml-10 px-3" href="/">
