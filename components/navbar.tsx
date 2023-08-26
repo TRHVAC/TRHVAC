@@ -61,19 +61,19 @@ export default function Navbar() {
           </div>
 
           <div className={classNames("absolute sm:hidden drop-shadow-lg bg-tr-lightGray z-10 w-screen h-screen py-4",
-
-              {hidden: !openDropdown})}>
+              {hidden: !openDropdown}
+              )}>
 
             <div className='px-8 py-4'>
               <Link href="/" className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4" legacyBehavior>
-                <a onClick={() => setOpenDropdown(!openDropdown)}>HOME</a>
+                <a onClick={() => {setOpenDropdown(!openDropdown); setMenuToggle(!menuToggle)}}>HOME</a>
               </Link>
             </div>
             <hr/>
 
             <div className='px-8 py-4'>
               <Link href={'/service/'} className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4" legacyBehavior>
-                <a onClick={() => setOpenDropdown(!openDropdown)}>SERVICE</a>
+                <a onClick={() => {setOpenDropdown(!openDropdown); setMenuToggle(!menuToggle)}}>SERVICE</a>
               </Link>
             
               {TR_SERVICE_ITEMS.map((item, i) => (
@@ -82,7 +82,7 @@ export default function Navbar() {
                   href={`/service/${item.queryName}`}
                   className="hover:text-tr-skyBlue block px-8 py-2 mt-1"
                 >
-                  <div onClick={() => setOpenDropdown(!openDropdown)}>{item.title}</div>
+                  <div onClick={() => {setOpenDropdown(!openDropdown); setMenuToggle(!menuToggle)}}>{item.title}</div>
                 </Link>
               ))}
             </div>
@@ -90,7 +90,7 @@ export default function Navbar() {
 
             <div className='px-8 py-4'>
               <Link href="/booking" className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4" legacyBehavior>
-                <a onClick={() => setOpenDropdown(!openDropdown)}>BOOKING</a>
+                <a onClick={() => {setOpenDropdown(!openDropdown); setMenuToggle(!menuToggle)}}>BOOKING</a>
               </Link>
             </div>
           </div>
