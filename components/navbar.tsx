@@ -13,9 +13,7 @@ import classNames from "classnames";
 export default function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
-  const handleDropdown = () => {
-    setOpenDropdown(!openDropdown)
-    }
+  
   return (
     <>
       {/* Intro Header */}
@@ -52,11 +50,10 @@ export default function Navbar() {
 
         <div className='px-7 sm:hidden group'>
           <div className='mt-5 mb-5 flexcenter'>
-          <button onClick={() => {setMenuToggle(!menuToggle); handleDropdown();}}>
+          <button onClick={() => {setMenuToggle(!menuToggle); setOpenDropdown(!openDropdown);}}>
               {menuToggle ? (
                 <CloseIcon/>
               ) : (
-
                 <BurgerIcon/>
               )}
             </button>
@@ -64,19 +61,19 @@ export default function Navbar() {
           </div>
 
           <div className={classNames("absolute sm:hidden drop-shadow-lg bg-tr-lightGray z-10 w-screen h-screen py-4",
-              { hidden: !menuToggle },
-              `... ${openDropdown ? 'block' : 'hidden'}`)}>
+
+              {hidden: !openDropdown})}>
 
             <div className='px-8 py-4'>
               <Link href="/" className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4" legacyBehavior>
-                <a onClick={handleDropdown}>HOME</a>
+                <a onClick={() => setOpenDropdown(!openDropdown)}>HOME</a>
               </Link>
             </div>
             <hr/>
 
             <div className='px-8 py-4'>
               <Link href={'/service/'} className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4" legacyBehavior>
-                <a onClick={handleDropdown}>SERVICE</a>
+                <a onClick={() => setOpenDropdown(!openDropdown)}>SERVICE</a>
               </Link>
             
               {TR_SERVICE_ITEMS.map((item, i) => (
@@ -85,7 +82,7 @@ export default function Navbar() {
                   href={`/service/${item.queryName}`}
                   className="hover:text-tr-skyBlue block px-8 py-2 mt-1"
                 >
-                  <div>{item.title}</div>
+                  <div onClick={() => setOpenDropdown(!openDropdown)}>{item.title}</div>
                 </Link>
               ))}
             </div>
@@ -93,7 +90,7 @@ export default function Navbar() {
 
             <div className='px-8 py-4'>
               <Link href="/booking" className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4" legacyBehavior>
-                <a onClick={handleDropdown}>BOOKING</a>
+                <a onClick={() => setOpenDropdown(!openDropdown)}>BOOKING</a>
               </Link>
             </div>
           </div>
