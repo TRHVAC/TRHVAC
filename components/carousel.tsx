@@ -7,6 +7,9 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import prevArr from '@public/carousel/arrow-prev.svg';
 import nextArr from '@public/carousel/arrow-next.svg';
+import Link from 'next/link';
+import { Instagram_Link } from '@utils/constants';
+
 
 const carouselImages = [
   require('@public/carousel/carousel-image-1.jpg'),
@@ -72,11 +75,13 @@ export default function Carousel() {
         <Slider {...settings} className="w-10/12 m-auto mb-28">
           {carouselImages.map((imageSrc, index) => (
             <div key={index} className="w-full m-auto px-3">
-              <Image
-                src={imageSrc}
-                alt={`carousel-img-${index + 1}`}
-                className="w-full h-full"
-              />
+              <Link href={`${Instagram_Link}`}>
+                <Image
+                  src={imageSrc}
+                  alt={`carousel-img-${index + 1}`}
+                  className="w-full h-full"
+                />
+              </Link>
             </div>
           ))}
         </Slider>

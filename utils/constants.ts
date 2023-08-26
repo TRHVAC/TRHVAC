@@ -19,6 +19,8 @@ import { PhoneIcon } from '@components/icons/PhoneIcon';
 export const TR_GOOGLE_REVIEW_LINK =
   'https://www.google.com/maps/place/TR+Heating+and+Cooling/@43.7978857,-79.4221016,17z/data=!4m8!3m7!1s0x882b2d1df0cb1bbb:0x93d9b238c86d3b1a!8m2!3d43.7978819!4d-79.4195267!9m1!1b1!16s%2Fg%2F11qhjgfkq6?entry=ttu';
 
+export const Instagram_Link = "https://www.instagram.com/trhvac/"
+
 export const TR_CONTACT_INFO: {
   [key: string]: {
     title: string;

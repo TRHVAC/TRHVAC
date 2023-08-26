@@ -14,9 +14,7 @@ import classNames from "classnames";
 export default function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
-  // const handleDropdown = () => {
-  //   setOpenDropdown(!openDropdown)
-  //   }
+  
   return (
     <>
 
