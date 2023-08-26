@@ -14,6 +14,7 @@ export default function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
   
+
   return (
     <>
       {/* Intro Header */}
@@ -21,7 +22,16 @@ export default function Navbar() {
         <Link className="sm:ml-10 px-3" href="/">
           <Image src={NAV_LOGO} alt="company logo" width={80} height={80} />
         </Link>
-        
+        {/* <input
+              type="text"
+              name="message"
+              placeholder="아무거나 입력해 보세요"
+              onChange={
+                  (e)=>{
+                      console.log(e.target.value)
+                  }
+              }
+              /> */}
         <div className="flexcenter gap-2 sm:gap-5 mr-2 sm:mr-5 text-xs sm:text-sm">
           {['Address', 'Email', 'Instagram'].map((item, index) => {
             return (
@@ -60,7 +70,7 @@ export default function Navbar() {
               
           </div>
 
-          <div className={classNames("absolute sm:hidden drop-shadow-lg bg-tr-lightGray z-10 w-screen h-screen py-4",
+          <div className={classNames("absolute sm:hidden drop-shadow-lg bg-tr-lightGray z-100 w-screen h-screen py-4 shadow-box",
               {hidden: !openDropdown}
               )}>
 

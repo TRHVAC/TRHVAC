@@ -28,3 +28,7 @@
   margin-left: -50px;
   margin-bottom: -1em;
 }
+
+.shadow-box{
+  box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
+}
