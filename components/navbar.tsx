@@ -8,7 +8,7 @@ import BurgerIcon from '@components/icons/BurgerIcon';
 import CloseIcon from './icons/CloseIcon';
 import classNames from "classnames";
 
-
+// mobile 380px
 
 export default function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
