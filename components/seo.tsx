@@ -1,9 +1,13 @@
-import Head from 'next/head';
+import Head from "next/head";
 
-export default function Seo() {
+type PropType = {
+  title?: string;
+};
+
+export default function Seo({ title }: PropType) {
   return (
     <Head>
-      <title>TR HVAC | Heating & Cooling</title>
+      <title>{title || "TR HVAC | Heating & Cooling"}</title>
       <meta
         name="description"
         content="TR HVAC offers professional heating and air conditioning services in Toronto"
