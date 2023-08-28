@@ -8,8 +8,6 @@ import BurgerIcon from '@components/icons/BurgerIcon';
 import CloseIcon from './icons/CloseIcon';
 import classNames from "classnames";
 
-// mobile 380px
-
 export default function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
@@ -32,7 +30,7 @@ export default function Navbar() {
                   }
               }
               /> */}
-        <div className="flexcenter gap-2 sm:gap-5 mr-2 sm:mr-5 text-xs sm:text-sm">
+        <div className="flexcenter gap-2 sm:gap-5 mr-5 text-xs sm:text-sm">
           {['Address', 'Email', 'Instagram'].map((item, index) => {
             return (
               <Link
@@ -40,8 +38,8 @@ export default function Navbar() {
                 key={`${item}-${index}`}
                 className="hover:text-tr-skyBlue flexcenter gap-1"
               >
-                {TR_CONTACT_INFO[item].icon()}
-                {TR_CONTACT_INFO[item].title}
+                <div className="p-1">{TR_CONTACT_INFO[item].icon()}</div>
+                <div className="hidden iPhone12:flex">{TR_CONTACT_INFO[item].title}</div>
               </Link>
             );
           })}
@@ -49,16 +47,16 @@ export default function Navbar() {
       </div>
 
       
-      {/* Navbar Section - Mobile*/}
+      {/* Navbar Section - Hamburger Menu*/}
       <div className="justify-between flex bg-tr-lightGray drop-shadow-lg sticky top-0 z-[1000]">
         <Link
-          className="flexcenter text-4xl font-extrabold text-tr-skyBlue ml-5 font-sans"
+          className="flexcenter text-2xl sm:text-4xl font-extrabold text-tr-skyBlue ml-5 font-sans"
           href="/"
         >
           TR HVAC
         </Link>
 
-        <div className='px-7 sm:hidden group'>
+        <div className='px-1 sm:hidden group'>
           <div className='mt-5 mb-5 flexcenter'>
           <button onClick={() => {setMenuToggle(!menuToggle); setOpenDropdown(!openDropdown);}}>
               {menuToggle ? (
@@ -70,7 +68,7 @@ export default function Navbar() {
               
           </div>
 
-          <div className={classNames("absolute sm:hidden drop-shadow-lg bg-tr-lightGray z-100 w-screen h-screen py-4 shadow-box",
+          <div className={classNames("absolute sm:hidden drop-shadow-lg bg-tr-lightGray z-100 h-screen py-4 shadow-box iPhone12:px-7",
               {hidden: !openDropdown}
               )}>
 
@@ -145,9 +143,9 @@ export default function Navbar() {
           </Link>
 
           <div>
-            <div className="text-tr-blue font-medium text-sm mb-2">Mon-Sat 9am-7pm</div>
+            <div className="text-xs text-tr-blue font-medium sm:text-sm mb-2">Mon-Sat 9am-7pm</div>
 
-            <Link className="font-bold text-white" href={TR_CONTACT_INFO['Phone'].ref}>
+            <Link className="text-sm font-bold sm:text-base text-white" href={TR_CONTACT_INFO['Phone'].ref}>
               {TR_CONTACT_INFO['Phone'].title}
             </Link>
           </div>
