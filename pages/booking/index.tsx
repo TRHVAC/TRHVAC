@@ -8,6 +8,9 @@ import Hero from "@components/hero";
 import { TR_CONTACT_INFO } from "@utils/constants";
 import BookingPerson from "@public/booking/booking-person.jpg";
 
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "@components/firebase";
+
 export const bookingDetails = (iconColor: string) => {
   return (
     <>
@@ -37,8 +40,9 @@ export const bookingDetails = (iconColor: string) => {
 interface BookingForm {
   email: string;
   name: string;
-  type: string[];
+  type: string;
   date: Date;
+  time: string;
   address: string;
   city: string;
   postal: string;
@@ -60,11 +64,24 @@ const Booking: NextPage = () => {
     watch,
   } = useForm<BookingForm>();
 
+  const addBooking = async (form: BookingForm) => {
+    try {
+      const docRef = await addDoc(collection(db, "bookings"), {
+        form,
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  };
+
   const onValid = async (validForm: BookingForm) => {
     console.log(validForm);
     // send email here
     if (loading) return;
-    book(validForm);
+    // book(validForm);
+    addBooking(validForm);
+    console.log(validForm);
   };
 
   return (
@@ -147,7 +164,7 @@ const Booking: NextPage = () => {
                     className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   />
                   <select
-                    {...register("type", {})}
+                    {...register("time", {})}
                     className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   >
                     <option value="" disabled>

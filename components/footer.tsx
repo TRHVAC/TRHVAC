@@ -1,6 +1,10 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { TR_CONTACT_INFO, TR_SERVICE_ITEMS, TR_SPECIALTY_ITEMS } from '@utils/constants';
+import {
+  TR_CONTACT_INFO,
+  TR_SERVICE_ITEMS,
+  TR_SPECIALTY_ITEMS,
+} from "@utils/constants";
 
 export default function Footer() {
   return (
@@ -8,17 +12,19 @@ export default function Footer() {
       <div className="max-w-screen-2xl mx-auto felx-col p-6">
         <div className="flex flex-col sm:flex-row justify-between mx-6 sm:mx-0">
           {/* Contact Section */}
-          <div className='mt-8 sm:mt-4'>
+          <div className="mt-8 sm:mt-4">
             <div className="text-2xl font-semibold mb-4">Contact us</div>
 
-            {['Address', 'Phone', 'Email', 'Instagram'].map((item, index) => {
+            {["Address", "Phone", "Email", "Instagram"].map((item, index) => {
               return (
                 <Link
                   key={`${item}-${index}`}
                   href={TR_CONTACT_INFO[item].ref}
                   className="hover:text-tr-footerGray flex mb-2"
                 >
-                  <div className="invert mr-2">{TR_CONTACT_INFO[item].icon()}</div>
+                  <div className="invert mr-2">
+                    {TR_CONTACT_INFO[item].icon()}
+                  </div>
 
                   {TR_CONTACT_INFO[item].title}
                 </Link>
@@ -27,7 +33,7 @@ export default function Footer() {
           </div>
 
           {/* Hours Section */}
-          <div className='mt-8 sm:mt-4'>
+          <div className="mt-8 sm:mt-4">
             <div className="text-2xl font-semibold mb-4">Hours</div>
 
             <div className="mb-2">Monday - Saturday</div>
@@ -36,7 +42,7 @@ export default function Footer() {
           </div>
 
           {/* Products Section */}
-          <div className='mt-8 sm:mt-4'>
+          <div className="mt-8 sm:mt-4">
             <div className="text-2xl font-semibold mb-4">Our Products</div>
             {TR_SERVICE_ITEMS.map((item, index) => (
               <Link
@@ -50,7 +56,7 @@ export default function Footer() {
           </div>
 
           {/* Service Section */}
-          <div className='mt-8 sm:mt-4'>
+          <div className="mt-8 sm:mt-4">
             <div className="text-2xl font-semibold mb-4">Our Service</div>
             {TR_SPECIALTY_ITEMS.map((item, index) => (
               <div className="mb-1" key={`${item}-${index}`}>
@@ -60,7 +66,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className='flex justify-center my-8 sm:justify-start'>&copy; TR HVAC, All Right Reserved.</div>
+        <div className="flex justify-center my-8 sm:justify-start">
+          &copy; TR HVAC, All Right Reserved.
+        </div>
       </div>
     </footer>
   );
