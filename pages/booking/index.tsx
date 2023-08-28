@@ -39,6 +39,7 @@ export const bookingDetails = (iconColor: string) => {
 
 interface BookingForm {
   email: string;
+  phone: string;
   name: string;
   type: string;
   date: Date;
@@ -184,6 +185,22 @@ const Booking: NextPage = () => {
                     <option value="8-9">8:00pm - 9:00pm</option>
                     <option value="other">other</option>
                   </select>
+                </div>
+                <div className="flex flex-row gap-2 w-full">
+                  <input
+                    {...register("email", {})}
+                    type="text"
+                    required={false}
+                    placeholder="Email Address"
+                    className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  />
+                  <input
+                    {...register("phone", {})}
+                    type="text"
+                    required={false}
+                    placeholder="Phone number"
+                    className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  />
                 </div>
                 <div className="flex flex-row gap-2 w-full">
                   <input
