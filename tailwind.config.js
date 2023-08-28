@@ -9,6 +9,12 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      'sm': '640px',
+      'md': '1024px',
+      'lg': '1280px',
+      'iPhone12': '391px',
+    },
     extend: {
       colors: {
         'tr-red': '#FD2156',
