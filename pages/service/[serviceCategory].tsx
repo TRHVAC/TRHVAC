@@ -34,12 +34,14 @@ const ServiceCategoryPage: NextPage = () => {
       <div className="flexcenter flex-col mt-10 bg-tr-lightGray py-4 px-2">
         <div className="text-xl font-bold">Our Service</div>
 
-        <div className="grid grid-cols-3 gap-4 px-4 mt-4">
+        <div className="grid grid-cols-2 gap-2 px-4 mt-4 sm:grid-cols-3">
           {serviceList.map((service, index) => {
             return (
-              <div className={`flex flex-col mt-2`} key={`${service.title}-${index}`}>
+              <div className="flex flex-col mt-2" key={`${service.title}-${index}`}>
                 <Image
-                  className={`opacity-70 object-cover h-[90%]`}
+                  className={`opacity-70 object-cover w-[95%] ${
+                    normalizedServiceCategory === 'WATERHEATER' ? 'h-full' : 'h-fit'
+                  } sm:h-[95%]`}
                   src={service.image}
                   alt={service.title}
                   placeholder="blur"

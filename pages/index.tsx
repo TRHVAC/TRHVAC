@@ -49,26 +49,24 @@ export default function Home() {
       <Hero heroImageCategory="HOME" />
 
       {/* Our Service Section */}
-      <div className="flexcenter flex-col mt-10 bg-tr-lightGray">
-        <div className="py-4 text-tr-blue font-bold text-3xl sm:text-xl ">
-          Our Service
-        </div>
+      <div className="flexcenter flex-col mt-10 bg-tr-lightGray sm:mt-10">
+        <div className="py-4 text-tr-blue font-bold text-xl sm:text-2xl">Our Service</div>
 
-        <div className="flex">
+        <div className="flex w-full">
           <div className="hidden sm:flex sm:flex-1">
             <Image src={ServiceImg} alt="home-service" placeholder="blur" />
           </div>
 
           <div className="hidden sm:block sm:w-3" />
 
-          <div className="grid gap-6 grid-cols-2 flex-1 sm:gap-4">
+          <div className="grid gap-3 flex-1 px-4 sm:grid-cols-2">
             {TR_SERVICE_ITEMS.map((service, index) => (
               <Link
                 key={`${service.title}-${index}`}
                 href={`/service/${service.queryName}`}
                 className="relative flexcenter overflow-hidden bg-[#444648A6] h-52 sm:h-auto"
               >
-                <div className="text-xl font-bold text-white z-10 text-center sm:text-xl">
+                <div className="text-lg font-bold text-white z-10 text-center sm:text-xl">
                   {service.title}
                 </div>
 
@@ -90,15 +88,17 @@ export default function Home() {
       </div>
 
       {/* About Section */}
-      <div className={`flex flex-row mt-16 relative bg-tr-lightGray`}>
+      <div className={`flex flex-row mt-10 relative bg-tr-lightGray sm:mt-16`}>
         <div className="flex-[2_2_0%] p-10">
-          <div className="font-bold text-tr-red text-xl">Your trusted partner</div>
+          <div className="font-bold text-tr-red text-lg sm:text-xl">
+            Your trusted partner
+          </div>
 
-          <div className="text-tr-blue font-medium text-3xl mt-2">
+          <div className="text-tr-blue font-medium text-2xl mt-2 sm:text-3xl">
             TR Heating & Cooling
           </div>
 
-          <div className="mt-4 whitespace-pre-line">
+          <div className="mt-4 whitespace-pre-line text-sm sm:text-base">
             Introducing TR Heating and Cooling, your trusted partner for all your HVAC
             needs in Greater Toronto Area. With over a decades of industry experience, our
             dedicated team of professionals is passionate about creating comfortable
@@ -129,7 +129,7 @@ export default function Home() {
       <Carousel />
 
       {/* Advantage Section */}
-      <div className="grid grid-cols-2 gap-8 relative p-6 mt-24 overflow-hidde bg-[#2C3546B0]/100 sm:bg-tr-blue/80 sm:flexcenter sm:flex-row sm:gap-0 sm:p-12">
+      <div className="grid grid-cols-2 gap-8 relative p-6 mt-10 overflow-hidde bg-[#2C3546B0]/100 text-sm sm:bg-tr-blue/80 sm:flexcenter sm:flex-row sm:gap-0 sm:p-12 sm:text-base sm:mt-24">
         <div className="text-white flex-1 text-center z-10">Service in GTA Area</div>
 
         <div className="text-white flex-1 text-center z-10">Gas & A/C Licensed</div>
@@ -149,15 +149,15 @@ export default function Home() {
       </div>
 
       {/* Our Specialty Section */}
-      <div className="flex flex-row bg-tr-lightGray mt-24">
-        <div className="bg-tr-skyBlue flexcenter py-14">
-          <div className="rotate-[270deg] whitespace-pre-line text-2xl text-white font-extrabold text-center">
+      <div className="flex flex-row bg-tr-lightGray mt-10 sm:mt-20">
+        <div className="bg-tr-skyBlue flexcenter sm:py-14">
+          <div className="rotate-[270deg] whitespace-pre-line text-xl text-white font-extrabold text-center sm:text-2xl">
             {CUR_YEAR - 2014} Years {'\n'} Experience
           </div>
         </div>
 
-        <div className="flex-1 px-12 py-10">
-          <div className="text-tr-red text-2xl font-bold text-center sm:text-xl">
+        <div className="flex-1 p-4 sm:px-12 sm:py-10">
+          <div className="text-tr-red text-xl font-bold text-center sm:text-2xl">
             Our Specialty
           </div>
 
@@ -168,9 +168,11 @@ export default function Home() {
                   className="flexcenter flex-col flex-1"
                   key={`${item.title}-${index}`}
                 >
-                  <div className="mb-2">{item.title}</div>
+                  <div className="mb-2 text-base sm:text-lg">{item.title}</div>
 
-                  <item.icon />
+                  <div className="hidden sm:block">
+                    <item.icon />
+                  </div>
                 </div>
               );
             })}
@@ -178,19 +180,20 @@ export default function Home() {
         </div>
       </div>
 
-      
-
       {/* Customer reviews section */}
-      <div className="flexcenter flex-col my-4 mt-8">
-        <div className="pt-4 text-tr-blue text-xl font-bold">Customer Reviews</div>
+      <div className="flexcenter flex-col mt-10 sm:mt-16">
+        <div className="text-tr-blue text-xl font-bold sm:text-2xl">Customer Reviews</div>
 
-        <Link className="text-tr-skyBlue py-4 mb-3 sm:mb-0" href={TR_GOOGLE_REVIEW_LINK}>
+        <Link className="text-tr-skyBlue m-4 sm:mb-0" href={TR_GOOGLE_REVIEW_LINK}>
           See all reviews
         </Link>
 
-        <div className="grid items-center grid-rows-3 sm:grid-rows-1 sm:grid-cols-3 px-8 sm:p-4">
+        <div className="px-8 sm:grid sm:grid-cols-3 sm:p-4">
           {reviewItems.map((item, i) => (
-            <div className="flex-col px-16" key={`${item.name}-${i}`}>
+            <div
+              className={`flex-col px-6 ${i === 0 ? 'mt-0' : 'mt-10'} sm:px-8 sm:mt-0`}
+              key={`${item.name}-${i}`}
+            >
               <div className="relative bg-tr-lightGray speech-bubble px-8 py-5 shadow-xl">
                 <div className="flex mb-2">
                   {Array.from({ length: 5 }, (_, index) => (
@@ -217,7 +220,6 @@ export default function Home() {
 
       {/* Google Map section */}
       <Map />
-      
     </div>
   );
 }

@@ -10,7 +10,6 @@ import nextArr from '@public/carousel/arrow-next.svg';
 import Link from 'next/link';
 import { Instagram_Link } from '@utils/constants';
 
-
 const carouselImages = [
   require('@public/carousel/carousel-image-1.jpg'),
   require('@public/carousel/carousel-image-2.jpg'),
@@ -68,15 +67,15 @@ export default function Carousel() {
   return (
     <div>
       <div>
-        <h2 className="text-center mt-10 text-sky-500 text-xl font-bold">
+        <h2 className="text-center mt-8 text-sky-500 text-xl font-bold sm:text-2xl sm:mt-10">
           Our Previous Work
         </h2>
 
-        <Link className="text-tr-skyBlue flexcenter py-5 mb-4" href={Instagram_Link}>
+        <Link className="text-tr-skyBlue flexcenter mt-2 mb-6" href={Instagram_Link}>
           See all works
         </Link>
 
-        <Slider {...settings} className="w-10/12 m-auto mb-28">
+        <Slider {...settings} className="w-10/12 m-auto">
           {carouselImages.map((imageSrc, index) => (
             <div key={index} className="w-full m-auto px-3">
               <Link href={`${Instagram_Link}`}>
