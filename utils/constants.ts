@@ -15,11 +15,10 @@ import { MailIcon } from '@components/icons/MailIcon';
 import { InstagramIcon } from '@components/icons/InstagramIcon';
 import { PhoneIcon } from '@components/icons/PhoneIcon';
 
-
 export const TR_GOOGLE_REVIEW_LINK =
   'https://www.google.com/maps/place/TR+Heating+and+Cooling/@43.7978857,-79.4221016,17z/data=!4m8!3m7!1s0x882b2d1df0cb1bbb:0x93d9b238c86d3b1a!8m2!3d43.7978819!4d-79.4195267!9m1!1b1!16s%2Fg%2F11qhjgfkq6?entry=ttu';
 
-export const Instagram_Link = "https://www.instagram.com/trhvac/"
+export const Instagram_Link = 'https://www.instagram.com/trhvac/';
 
 export const TR_CONTACT_INFO: {
   [key: string]: {
@@ -34,7 +33,7 @@ export const TR_CONTACT_INFO: {
     icon: (color) => MapIcon(color),
   },
   Phone: {
-    title: '(647) 522-5652',
+    title: '(647) 522 - 5652',
     ref: 'tel:647-522-5652',
     icon: (color, width, height) => PhoneIcon(color, width, height),
   },
@@ -59,11 +58,11 @@ export const TR_SERVICE_ITEMS = [
 
 export const TR_SPECIALTY_ITEMS = [
   { title: 'A/C', icon: ACIcon },
+  { title: 'Boiler', icon: BoilerIcon },
+  { title: 'Tankless', icon: TanklessIcon },
+  { title: 'Gas Line', icon: GasLineIcon },
   { title: 'Furnace', icon: FurnaceIcon },
   { title: 'Maintenance', icon: MaintenanceIcon },
-  { title: 'Gas Line', icon: GasLineIcon },
-  { title: 'Tankless', icon: TanklessIcon },
-  { title: 'Boiler', icon: BoilerIcon },
 ];
 
 export const HeroBodyContents: Record<
