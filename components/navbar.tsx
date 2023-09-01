@@ -17,19 +17,10 @@ export default function Navbar() {
     <>
       {/* Intro Header */}
       <div className="flex justify-between items-center bg-white">
-        <Link className="sm:ml-10 px-3" href="/">
+        {/* <Link className="sm:ml-10 px-3" href="/">
           <Image src={NAV_LOGO} alt="company logo" width={80} height={80} />
-        </Link>
-        {/* <input
-              type="text"
-              name="message"
-              placeholder="아무거나 입력해 보세요"
-              onChange={
-                  (e)=>{
-                      console.log(e.target.value)
-                  }
-              }
-              /> */}
+        </Link> */}
+
         <div className="flexcenter gap-2 sm:gap-5 mr-5 text-xs sm:text-sm">
           {['Address', 'Email', 'Instagram'].map((item, index) => {
             return (
@@ -48,13 +39,16 @@ export default function Navbar() {
 
       
       {/* Navbar Section - Hamburger Menu*/}
-      <div className="justify-between flex bg-tr-lightGray drop-shadow-lg sticky top-0 z-[1000]">
-        <Link
+      <div className="justify-between flex bg-white sticky top-0 z-[1000]">
+        <Link className="" href="/">
+          <Image src={NAV_LOGO} alt="company logo" width={250} height={100} />
+        </Link>
+        {/* <Link
           className="flexcenter text-2xl sm:text-4xl font-extrabold text-tr-skyBlue ml-5 font-sans"
           href="/"
         >
           TR HVAC
-        </Link>
+        </Link> */}
 
         <div className='px-1 sm:hidden group'>
           <div className='mt-5 mb-5 flexcenter'>

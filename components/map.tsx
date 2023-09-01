@@ -28,12 +28,15 @@ export default function Map() {
           )}
         </div>
 
-        <div className="bg-tr-skyBlue flex justify-around items-center flex-col flex-1 text-white py-10 sm:py-16">
-          <Link href="/booking" className="bg-tr-red text-2xl p-4 font-semibold mb-4">
+        <div className="bg-tr-skyBlue flex justify-around items-center flex-col flex-1 text-white py-14 sm:py-16">
+          <Link
+            href="/booking"
+            className="bg-tr-red text-lg p-4 font-semibold sm:text-2xl sm:mb-4"
+          >
             Book a service
           </Link>
 
-          <div className="flex flex-col gap-2 ml-14 text-xl leading-8 sm:text-lg sm:ml-8">
+          <div className="flex flex-col gap-1 ml-14 text-base leading-7 sm:text-lg sm:ml-8 sm:gap-2">
             {bookingDetails('#FFFFFF')}
           </div>
         </div>

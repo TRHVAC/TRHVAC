@@ -38,7 +38,7 @@ const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' }) => {
   }, [heroImageCategory]);
 
   return (
-    <div className={`px-10 py-10 h-72 flex item-center relative sm:h-[550px]`}>
+    <div className={`px-4 h-48 flex item-center relative sm:h-[550px] sm:px-10 sm:py-10`}>
       <div className="-z-10">
         <Image
           src={getHeroImage()}
@@ -58,22 +58,22 @@ const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' }) => {
         />
 
         <div
-          className={`flex flex-row items-center py-10 w-full ${
+          className={`flex flex-row w-full py-8 ${
             heroImageCategory === 'IAQ' ? 'text-black' : 'text-white'
           }
-          sm:justify-between sm:-ml-10 sm:flex-col
+          sm:justify-between sm:-ml-10 sm:flex-col sm:py-10
           `}
         >
-          <div className="flex-1">
+          <div className="flex-1 flex items-center justify-center flex-col sm:items-start sm:justify-start">
             {HeroBodyContents[heroImageCategory].intro ? (
-              <h2 className="text-sm sm:text-xl">
+              <h2 className="text-sm w-full pr-10 sm:text-xl">
                 {HeroBodyContents[heroImageCategory].intro}
               </h2>
             ) : (
               <div className="sm:pt-7" />
             )}
 
-            <h1 className="text-2xl mt-2 pr-14 font-bold whitespace-pre-line sm:mt-4 sm:text-4xl sm:pr-0">
+            <h1 className="text-2xl w-full mt-2 font-bold pr-12 whitespace-pre-line sm:mt-4 sm:text-4xl sm:pr-0">
               {HeroBodyContents[heroImageCategory].title}
             </h1>
 
@@ -82,10 +82,10 @@ const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' }) => {
             </h2>
           </div>
 
-          <div className="flex-1 flex justify-end sm:w-full sm:justify-start sm:flex-none">
+          <div className="flex-1 flex justify-end items-end sm:w-full sm:justify-start sm:flex-none">
             <Link
               href="/booking"
-              className="flexcenter bg-tr-red py-3 px-4 text-xl font-semibold w-fit sm:flex-none sm:text-2xl sm:p-4"
+              className="flexcenter bg-tr-red py-3 px-4 text-lg font-semibold w-fit h-1/3 sm:flex-none sm:text-2xl sm:p-4 sm:h-fit"
             >
               Book a service
             </Link>

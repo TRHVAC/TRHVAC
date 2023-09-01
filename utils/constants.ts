@@ -15,11 +15,10 @@ import { MailIcon } from '@components/icons/MailIcon';
 import { InstagramIcon } from '@components/icons/InstagramIcon';
 import { PhoneIcon } from '@components/icons/PhoneIcon';
 
-
 export const TR_GOOGLE_REVIEW_LINK =
   'https://www.google.com/maps/place/TR+Heating+and+Cooling/@43.7978857,-79.4221016,17z/data=!4m8!3m7!1s0x882b2d1df0cb1bbb:0x93d9b238c86d3b1a!8m2!3d43.7978819!4d-79.4195267!9m1!1b1!16s%2Fg%2F11qhjgfkq6?entry=ttu';
 
-export const Instagram_Link = "https://www.instagram.com/trhvac/"
+export const Instagram_Link = 'https://www.instagram.com/trhvac/';
 
 export const TR_CONTACT_INFO: {
   [key: string]: {
@@ -29,12 +28,12 @@ export const TR_CONTACT_INFO: {
   };
 } = {
   Address: {
-    title: 'L3P 6Y5, North York, ON',
-    ref: 'https://www.google.com/maps/place/L3P+6Y5+%EC%98%A8%ED%83%80%EB%A6%AC%EC%98%A4+%EB%A7%88%ED%81%AC%ED%97%98/@43.8831285,-79.2672715,17z/data=!3m1!4b1!4m6!3m5!1s0x89d4d63d214740bb:0x5a68fbad18e633!8m2!3d43.8831802!4d-79.2643196!16s%2Fg%2F1tfmpcmm?entry=ttu', // TODO: Need to check proper link
+    title: 'GTA Area',
+    ref: 'https://www.google.com/maps/place/TR+Heating+and+Cooling/@43.7978814,-79.429805,15z/data=!3m1!4b1!4m6!3m5!1s0x882b2d1df0cb1bbb:0x93d9b238c86d3b1a!8m2!3d43.7978819!4d-79.4195267!16s%2Fg%2F11qhjgfkq6?entry=ttu', // TODO: Need to check proper link
     icon: (color) => MapIcon(color),
   },
   Phone: {
-    title: '(647) 522-5652',
+    title: '(647) 522 - 5652',
     ref: 'tel:647-522-5652',
     icon: (color, width, height) => PhoneIcon(color, width, height),
   },
@@ -59,11 +58,11 @@ export const TR_SERVICE_ITEMS = [
 
 export const TR_SPECIALTY_ITEMS = [
   { title: 'A/C', icon: ACIcon },
+  { title: 'Boiler', icon: BoilerIcon },
+  { title: 'Tankless', icon: TanklessIcon },
+  { title: 'Gas Line', icon: GasLineIcon },
   { title: 'Furnace', icon: FurnaceIcon },
   { title: 'Maintenance', icon: MaintenanceIcon },
-  { title: 'Gas Line', icon: GasLineIcon },
-  { title: 'Tankless', icon: TanklessIcon },
-  { title: 'Boiler', icon: BoilerIcon },
 ];
 
 export const HeroBodyContents: Record<
