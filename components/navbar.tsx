@@ -15,8 +15,10 @@ export default function Navbar() {
 
   return (
     <>
+      <div className="px-0 md:px-10">
+
       {/* Intro Header */}
-      <div className="flex justify-between items-center bg-white">
+      <div className="flex justify-end items-center bg-white py-5">
         {/* <Link className="sm:ml-10 px-3" href="/">
           <Image src={NAV_LOGO} alt="company logo" width={80} height={80} />
         </Link> */}
@@ -39,9 +41,9 @@ export default function Navbar() {
 
       
       {/* Navbar Section - Hamburger Menu*/}
-      <div className="justify-between flex bg-white sticky top-0 z-[1000]">
-        <Link className="" href="/">
-          <Image src={NAV_LOGO} alt="company logo" width={250} height={100} />
+      <div className="flex justify-between bg-white sticky top-0 z-[1000]">
+        <Link className="flexcenter" href="/">
+          <Image src={NAV_LOGO} alt="company logo" width={200} height={100}/>
         </Link>
         {/* <Link
           className="flexcenter text-2xl sm:text-4xl font-extrabold text-tr-skyBlue ml-5 font-sans"
@@ -50,8 +52,8 @@ export default function Navbar() {
           TR HVAC
         </Link> */}
 
-        <div className='px-1 sm:hidden group'>
-          <div className='mt-5 mb-5 flexcenter'>
+        <div className='px-1 md:hidden group'>
+          <div className='w-full h-full flexcenter px-3'>
           <button onClick={() => {setMenuToggle(!menuToggle); setOpenDropdown(!openDropdown);}}>
               {menuToggle ? (
                 <CloseIcon/>
@@ -62,11 +64,11 @@ export default function Navbar() {
               
           </div>
 
-          <div className={classNames("absolute sm:hidden drop-shadow-lg bg-tr-lightGray z-100 h-screen py-4 shadow-box iPhone12:px-7",
+          <div className={classNames("right-0 absolute md:hidden drop-shadow-lg bg-tr-lightGray z-100 h-screen py-4 shadow-box iPhone12:px-7",
               {hidden: !openDropdown}
               )}>
 
-            <div className='px-8 py-4'>
+            <div className='px-8 py-4 flex'>
               <Link href="/" className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4" legacyBehavior>
                 <a onClick={() => {setOpenDropdown(!openDropdown); setMenuToggle(!menuToggle)}}>HOME</a>
               </Link>
@@ -88,29 +90,47 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-            <hr/>         
+            <hr/>
 
             <div className='px-8 py-4'>
               <Link href="/booking" className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4" legacyBehavior>
                 <a onClick={() => {setOpenDropdown(!openDropdown); setMenuToggle(!menuToggle)}}>BOOKING</a>
               </Link>
             </div>
+
+            <div className="bg-tr-skyBlue gap-3 flex items-center md:hidden pr-3 py-3">
+              <Link href={TR_CONTACT_INFO['Phone'].ref}>
+                <div className="bg-white p-3 ml-4">
+                    {TR_CONTACT_INFO['Phone'].icon('#FD2156', 26, 26)}
+                </div>
+              </Link>
+
+              <div>
+                <div className="text-xs text-tr-blue font-medium sm:text-sm mb-2">Mon-Sat 9am-7pm</div>
+
+                <Link className="text-sm font-bold sm:text-base text-white" href={TR_CONTACT_INFO['Phone'].ref}>
+                  {TR_CONTACT_INFO['Phone'].title}
+                </Link>
+              </div>
+            </div>
+
           </div>
+
         </div>
 
         {/* Navbar Section - Mobile*/}
-        <div className="flexcenter text-lg flex hidden sm:flex">
-          <Link href="/" className="hover:text-tr-skyBlue px-7 py-7">
+        <div className="flexcenter text-lg flex hidden md:flex">
+          <Link href="/" className="hover:text-tr-skyBlue px-7 py-7 h-full flexcenter">
             HOME
           </Link>
           
-          <div className="group px-7 py-7 cursor-pointer">
+          <div className="group px-7 py-7 cursor-pointer h-full flexcenter relative">
 
             <Link href="/service/" className="group-hover:text-tr-skyBlue">
               SERVICE
             </Link>
 
-            <div className="absolute drop-shadow-lg bg-tr-lightGray z-10 hidden group-hover:block mt-7">
+            <div className="text-base absolute drop-shadow-lg bg-tr-lightGray z-10 hidden group-hover:block dropDown">
               {TR_SERVICE_ITEMS.map((item, i) => (
                 <Link
                   key={`${item.title}-${i}`}
@@ -123,13 +143,13 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Link href="/booking" className="hover:text-tr-skyBlue px-7 py-7">
+          <Link href="/booking" className="hover:text-tr-skyBlue px-7 py-7 h-full flexcenter">
             BOOKING
           </Link>
         </div>
         
 
-        <div className="bg-tr-skyBlue gap-3 flexcenter pr-3">
+        <div className="bg-tr-skyBlue gap-3 hidden md:flex items-center justify-center pr-3">
           <Link href={TR_CONTACT_INFO['Phone'].ref}>
             <div className="bg-white p-3 ml-4">
                 {TR_CONTACT_INFO['Phone'].icon('#FD2156', 26, 26)}
@@ -144,6 +164,8 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
+      </div>
+
       </div>
     </>
   );
