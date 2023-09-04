@@ -57,7 +57,7 @@ interface MutationResult {
 
 const Booking: NextPage = () => {
   const [book, { loading, data, error }] =
-    useMutation<MutationResult>("/api/booking");
+    useMutation<MutationResult>("/api/sendMail");
   const {
     register,
     handleSubmit,
@@ -65,30 +65,37 @@ const Booking: NextPage = () => {
     watch,
   } = useForm<BookingForm>();
 
-  const addBooking = async (form: BookingForm) => {
-    try {
-      const docRef = await addDoc(collection(db, "bookings"), {
-        form,
-      });
-      console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
-  };
+  // const addInFirebase = async (form: BookingForm) => {
+  //   try {
+  //     const docRef = await addDoc(collection(db, "bookings"), {
+  //       form,
+  //     });
+  //     console.log("Document written with ID: ", docRef.id);
+  //   } catch (e) {
+  //     console.error("Error adding document: ", e);
+  //   }
+  // };
 
   const onValid = async (validForm: BookingForm) => {
-    console.log(validForm);
-    // send email here
     if (loading) return;
-    // book(validForm);
-    addBooking(validForm);
-    console.log(validForm);
+    book(validForm);
+    // addInFirebase(validForm);
+  };
+
+  const sendEmail = (validForm: BookingForm) => {
+    fetch("/api/sendMail", {
+      credentials: "same-origin",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(validForm),
+    }).catch((err) => console.log(err));
   };
 
   return (
     <div>
       <Hero heroImageCategory="BOOKING" />
-
       <div className="flexcenter flex-col md:flex-row pt-10">
         {/* left text */}
         <div className="flex flex-col">
@@ -102,12 +109,10 @@ const Booking: NextPage = () => {
               <Link className="text-tr-red" href={TR_CONTACT_INFO["Phone"].ref}>
                 {TR_CONTACT_INFO["Phone"].title}
               </Link>
-              {"\n"}
               or <span className="text-tr-skyBlue">book online</span> here.
             </div>
 
             <span className="hidden md:inline-block">
-              {" "}
               {bookingDetails("#676661")}
             </span>
           </div>
@@ -152,9 +157,7 @@ const Booking: NextPage = () => {
                     {...register("type", {})}
                     className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   >
-                    <option value="" disabled selected>
-                      Appliance Type
-                    </option>
+                    <option disabled>Appliance Type</option>
                     <option value="heating">heating</option>
                     <option value="option2">cooling</option>
                     <option value="water heaters">water heaters</option>
@@ -175,7 +178,7 @@ const Booking: NextPage = () => {
                     {...register("time", {})}
                     className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   >
-                    <option value="" disabled selected>
+                    <option value="" disabled>
                       Preffered Time
                     </option>
                     <option value="9-10">9:00am - 10:00am</option>
