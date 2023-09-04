@@ -57,7 +57,7 @@ const ServiceCategoryPage: NextPage = () => {
       </div>
 
       {/* Google Map */}
-      <Map />
+      {/* <Map /> */}
     </>
   );
 };
