@@ -97,7 +97,7 @@ const Booking: NextPage = () => {
           </h2>
 
           <div className="flex flex-col gap-1 text-tr-gray">
-            <div className="text-tr-blue font-semibold whitespace-pre-line">
+            <div className="text-tr-blue font-semibold whitespace-pre-line ">
               Call{" "}
               <Link className="text-tr-red" href={TR_CONTACT_INFO["Phone"].ref}>
                 {TR_CONTACT_INFO["Phone"].title}
@@ -106,10 +106,13 @@ const Booking: NextPage = () => {
               or <span className="text-tr-skyBlue">book online</span> here.
             </div>
 
-            {bookingDetails("#676661")}
+            <span className="hidden md:inline-block">
+              {" "}
+              {bookingDetails("#676661")}
+            </span>
           </div>
 
-          <div className="py-4">
+          <div className="hidden md:block py-4">
             <Image
               src={BookingPerson}
               alt="image of a person"
@@ -120,8 +123,8 @@ const Booking: NextPage = () => {
         </div>
 
         {/* TODO: Update the form */}
-        <div className="w-4/5  md:w-3/5 border-2 rounded-t-md shadow-xl mb-8 pb-5 overflow-hidden border-gray-200 ml-10">
-          <div className="w-full m-0 text-xl text-center p-3 bg-tr-skyBlue text-white  px-4 border border-gray-300  rounded-t-md shadow-sm font-medium focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:outline-none pb-3">
+        <div className="w-4/5 mt-10 md:w-3/5 border-2 rounded-t-md shadow-xl mb-8 pb-5 overflow-hidden border-gray-200 ml-10">
+          <div className="w-full m-0 text-xl text-center p-5 bg-tr-skyBlue text-white  px-4 border border-gray-300  rounded-t-md shadow-sm font-medium focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:outline-none pb-3">
             Book An Appointment
           </div>
           <div className="mt-12 px-4">
@@ -129,8 +132,8 @@ const Booking: NextPage = () => {
               onSubmit={handleSubmit(onValid)}
               className="flex flex-col mt-8 space-y-4 justify-center items-center"
             >
-              <div className="rounded-md relative flex flex-col w-full items-center shadow-sm gap-2">
-                <div className="flex flex-row gap-2 w-full">
+              <div className="rounded-md gap-4 relative flex flex-col w-full items-center shadow-sm ">
+                <div className="flex flex-col md:flex-row gap-4 w-full">
                   <input
                     {...register("name", {
                       required: "user name is required",
@@ -149,15 +152,19 @@ const Booking: NextPage = () => {
                     {...register("type", {})}
                     className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   >
-                    <option value="" disabled>
+                    <option value="" disabled selected>
                       Appliance Type
                     </option>
-                    <option value="option1">option1</option>
-                    <option value="option2">option2</option>
-                    <option value="other">other</option>
+                    <option value="heating">heating</option>
+                    <option value="option2">cooling</option>
+                    <option value="water heaters">water heaters</option>
+                    <option value="indoor air">
+                      indoor air quality products
+                    </option>
+                    <option value="others">others</option>
                   </select>
                 </div>
-                <div className="flex flex-row gap-2 w-full">
+                <div className="flex flex-col md:flex-row gap-4 w-full">
                   <input
                     {...register("date", {})}
                     type="date"
@@ -168,7 +175,7 @@ const Booking: NextPage = () => {
                     {...register("time", {})}
                     className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   >
-                    <option value="" disabled>
+                    <option value="" disabled selected>
                       Preffered Time
                     </option>
                     <option value="9-10">9:00am - 10:00am</option>
@@ -186,7 +193,7 @@ const Booking: NextPage = () => {
                     <option value="other">other</option>
                   </select>
                 </div>
-                <div className="flex flex-row gap-2 w-full">
+                <div className="flex flex-col md:flex-row gap-4 w-full">
                   <input
                     {...register("email", {})}
                     type="text"
@@ -202,7 +209,7 @@ const Booking: NextPage = () => {
                     className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
-                <div className="flex flex-row gap-2 w-full">
+                <div className="flex flex-col md:flex-row gap-4 w-full">
                   <input
                     {...register("address", {})}
                     type="text"
@@ -211,7 +218,7 @@ const Booking: NextPage = () => {
                     className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
-                <div className="flex flex-row gap-2 w-full">
+                <div className="flex flex-col md:flex-row gap-4 w-full">
                   <input
                     {...register("city", {})}
                     type="text"
@@ -228,7 +235,7 @@ const Booking: NextPage = () => {
                     className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
-                <div className="flex flex-row gap-2 w-full">
+                <div className="flex flex-col md:flex-row gap-4 w-full">
                   <input
                     {...register("note", {})}
                     type="text"
@@ -238,7 +245,7 @@ const Booking: NextPage = () => {
                   />
                 </div>
               </div>
-              <button className="w-96 bg-tr-skyBlue hover:bg-blue-500 text-white  px-4 border border-transparent rounded-md shadow-sm font-medium focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:outline-none py-3 text-base">
+              <button className="w-96 bg-tr-skyBlue  text-white  px-4 border border-transparent rounded-md shadow-sm font-medium focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:outline-none py-3 text-base">
                 {loading ? "Loading..." : "Book Now"}
               </button>
 
