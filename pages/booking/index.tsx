@@ -158,12 +158,11 @@ const Booking: NextPage = () => {
                     className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   >
                     <option disabled>Appliance Type</option>
-                    <option value="heating">heating</option>
-                    <option value="option2">cooling</option>
-                    <option value="water heaters">water heaters</option>
-                    <option value="indoor air">
-                      indoor air quality products
-                    </option>
+                    <option value="Furnace">Furnace</option>
+                    <option value="A/C">A/C</option>
+                    <option value="Water Heater Tank">Water Heater Tank</option>
+                    <option value="Boiler">Boiler</option>
+                    <option value="Gas Line">Gas Line</option>
                     <option value="others">others</option>
                   </select>
                 </div>
@@ -253,7 +252,7 @@ const Booking: NextPage = () => {
               </button>
 
               {/* tell that booking is done. => show booking info */}
-              {data && "booking done. our team will contact you"}
+              {data && "booking done. Our team will contact you shortly."}
             </form>
           </div>
         </div>
