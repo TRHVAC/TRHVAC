@@ -67,7 +67,7 @@ export default function Carousel() {
   return (
     <div>
       <div>
-        <h2 className="text-center mt-8 text-sky-500 text-xl font-bold sm:text-2xl sm:mt-10">
+        <h2 className="text-center mt-8 text-tr-blue text-xl font-bold sm:text-2xl sm:mt-10">
           Our Previous Work
         </h2>
 

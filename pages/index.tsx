@@ -49,7 +49,7 @@ export default function Home() {
       <Hero heroImageCategory="HOME" />
 
       {/* Our Service Section */}
-      <div className="flexcenter flex-col mt-10 bg-tr-lightGray sm:mt-10">
+      <div className="flexcenter flex-col pt-10 pb-10 bg-tr-lightGray sm:mt-10 sm:pb-0">
         <div className="py-4 text-tr-blue font-bold text-xl sm:text-2xl">Our Service</div>
 
         <div className="flex w-full">
@@ -88,7 +88,7 @@ export default function Home() {
       </div>
 
       {/* About Section */}
-      <div className={`flex flex-row mt-10 relative bg-tr-lightGray sm:mt-16`}>
+      <div className={`flex flex-row relative bg-tr-lightGray sm:mt-16`}>
         <div className="flex-[2_2_0%] p-10">
           <div className="font-bold text-tr-red text-lg sm:text-xl">
             Your trusted partner
@@ -182,7 +182,7 @@ export default function Home() {
 
       {/* Customer reviews section */}
       <div className="flexcenter flex-col mt-10 sm:mt-16">
-        <div className="text-tr-blue text-xl font-bold sm:text-2xl">Customer Reviews</div>
+        <div className="text-xl font-bold sm:text-2xl">Customer Reviews</div>
 
         <Link className="text-tr-skyBlue m-4 sm:mb-0" href={TR_GOOGLE_REVIEW_LINK}>
           See all reviews
@@ -219,7 +219,7 @@ export default function Home() {
       </div>
 
       {/* Google Map section */}
-      <Map />
+      {/* <Map /> */}
     </div>
   );
 }
