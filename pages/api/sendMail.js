@@ -39,7 +39,9 @@ const handler = async (req, res) => {
       message: err.message,
     });
   }
-  console.log("email sent");
+  return res.json({
+    ok: true,
+  });
 };
 
 export default handler;

@@ -8,9 +8,6 @@ import Hero from "@components/hero";
 import { TR_CONTACT_INFO } from "@utils/constants";
 import BookingPerson from "@public/booking/booking-person.jpg";
 
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "@components/firebase";
-
 export const bookingDetails = (iconColor: string) => {
   return (
     <>
@@ -62,35 +59,11 @@ const Booking: NextPage = () => {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
   } = useForm<BookingForm>();
-
-  // const addInFirebase = async (form: BookingForm) => {
-  //   try {
-  //     const docRef = await addDoc(collection(db, "bookings"), {
-  //       form,
-  //     });
-  //     console.log("Document written with ID: ", docRef.id);
-  //   } catch (e) {
-  //     console.error("Error adding document: ", e);
-  //   }
-  // };
 
   const onValid = async (validForm: BookingForm) => {
     if (loading) return;
     book(validForm);
-    // addInFirebase(validForm);
-  };
-
-  const sendEmail = (validForm: BookingForm) => {
-    fetch("/api/sendMail", {
-      credentials: "same-origin",
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(validForm),
-    }).catch((err) => console.log(err));
   };
 
   return (
@@ -109,7 +82,10 @@ const Booking: NextPage = () => {
               <Link className="text-tr-red" href={TR_CONTACT_INFO["Phone"].ref}>
                 {TR_CONTACT_INFO["Phone"].title}
               </Link>
-              or <span className="text-tr-skyBlue">book online</span> here.
+              <span>
+                <span></span> or{" "}
+                <span className="text-tr-skyBlue">book online</span> here.
+              </span>
             </div>
 
             <span className="hidden md:inline-block">
@@ -128,7 +104,7 @@ const Booking: NextPage = () => {
         </div>
 
         {/* TODO: Update the form */}
-        <div className="w-4/5 mt-10 md:w-3/5 border-2 rounded-t-md shadow-xl mb-8 pb-5 overflow-hidden border-gray-200 ml-10">
+        <div className="w-full mt-10 md:w-3/5 border-2 rounded-t-md shadow-xl mb-8 pb-5 overflow-hidden border-gray-200 md:ml-10">
           <div className="w-full m-0 text-xl text-center p-5 bg-tr-skyBlue text-white  px-4 border border-gray-300  rounded-t-md shadow-sm font-medium focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:outline-none pb-3">
             Book An Appointment
           </div>
@@ -252,7 +228,11 @@ const Booking: NextPage = () => {
               </button>
 
               {/* tell that booking is done. => show booking info */}
-              {data && "booking done. Our team will contact you shortly."}
+              <span className="text-red-500">
+                {data?.ok
+                  ? "booking done. Our team will contact you shortly."
+                  : ""}
+              </span>
             </form>
           </div>
         </div>
