@@ -15,14 +15,8 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="px-0 md:px-10">
-
       {/* Intro Header */}
-      <div className="flex justify-end items-center bg-white py-5">
-        {/* <Link className="sm:ml-10 px-3" href="/">
-          <Image src={NAV_LOGO} alt="company logo" width={80} height={80} />
-        </Link> */}
-
+      <div className="flex justify-end items-center bg-white py-5 px-0 md:px-10">
         <div className="flexcenter gap-2 sm:gap-5 mr-5 text-xs sm:text-sm">
           {['Address', 'Email', 'Instagram'].map((item, index) => {
             return (
@@ -41,17 +35,11 @@ export default function Navbar() {
 
       
       {/* Navbar Section - Hamburger Menu*/}
-      <div className="flex justify-between bg-white sticky top-0 z-[1000]">
+      <div className="flex justify-between bg-white sticky top-0 z-[1000] px-0 md:px-10">
         <Link className="flexcenter" href="/">
           <Image src={NAV_LOGO} alt="company logo" width={200} height={100}/>
         </Link>
-        {/* <Link
-          className="flexcenter text-2xl sm:text-4xl font-extrabold text-tr-skyBlue ml-5 font-sans"
-          href="/"
-        >
-          TR HVAC
-        </Link> */}
-
+        
         <div className='px-1 md:hidden group'>
           <div className='w-full h-full flexcenter px-3'>
           <button onClick={() => {setMenuToggle(!menuToggle); setOpenDropdown(!openDropdown);}}>
@@ -164,8 +152,6 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
-      </div>
-
       </div>
     </>
   );

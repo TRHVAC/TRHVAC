@@ -6,8 +6,10 @@ import ServiceIAQ from '@public/home/service-iaq.jpg';
 import ServiceWaterHeater from '@public/home/service-water-heater.jpg';
 import { ACIcon } from '@components/icons/home/ACIcon';
 import { BoilerIcon } from '@components/icons/home/BoilerIcon';
+import AirHandlerIcon from '@components/icons/home/AirHandler';
+import GasLineIcon from '@components/icons/home/GasLineIcon';
+import WaterHeaterIcon from '@components/icons/home/WaterHeaterIcon';
 import { FurnaceIcon } from '@components/icons/home/FurnaceIcon';
-import { GasLineIcon } from '@components/icons/home/GasLineIcon';
 import { MaintenanceIcon } from '@components/icons/home/MaintenanceIcon';
 import { TanklessIcon } from '@components/icons/home/TanklessIcon';
 import { MapIcon } from '@components/icons/MapIcon';
@@ -59,10 +61,11 @@ export const TR_SERVICE_ITEMS = [
 export const TR_SPECIALTY_ITEMS = [
   { title: 'A/C', icon: ACIcon },
   { title: 'Boiler', icon: BoilerIcon },
-  { title: 'Tankless', icon: TanklessIcon },
-  { title: 'Gas Line', icon: GasLineIcon },
   { title: 'Furnace', icon: FurnaceIcon },
-  { title: 'Maintenance', icon: MaintenanceIcon },
+  { title: 'Gas Line', icon: GasLineIcon },
+  { title: 'Air Handler', icon: AirHandlerIcon },
+  { title: 'Water Heater', icon: WaterHeaterIcon },
+  { title: 'Tankless', icon: TanklessIcon },
 ];
 
 export const HeroBodyContents: Record<

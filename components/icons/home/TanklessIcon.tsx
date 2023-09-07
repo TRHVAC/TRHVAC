@@ -5,13 +5,13 @@ export const TanklessIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     xmlSpace="preserve"
-    width={45}
-    height={45}
+    width={35}
+    height={35}
   >
     <image
       xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAAXNSR0IArs4c6QAABPxJREFUaEOlWT1MHEcUfiusQ4GDWAGBJSJhH4IEGZPalisDhV1xyJIrO6RKYTchkqnsAje5InQuIqUgdmO5gYoUgVRRrsZCwj86EJIdBWQkfo5zOIEumpnbudn5efNmbxv2ltmZ733zvZ95G1Uqn2oANRBXBI37+qP4j/yXe0xxcx/m/9yG8slZ4uUfx/th/KsubUJ8OTnYslxUqVRixPikiD3xi7NL72Dn8ARG+zqE7RHA31v7MND9GRQmh8z5kSfYcjho66Tu6W7/usYBP76Zk5v28+o2FLf24be7I9De2hIEPDm4sa4JWpVBVOPMPVnegtLHShMLSuLROQa62+DRrUvQ29GKjrMyrXI5t7zJmZr42qLJhCfU9RAvp/2UKBzPmR+Idb6AmbGL4aBVJ5h+tg692VYo5AftE1nVQnAAfbYI4MGLDe7EC/dGaKBdy0w/b4BmrB9Xz6Aw6TCAGBBcrjK7KByZDNplmg565+gEnt4ZDtY3hfs4+ix8O+KMvDwwGyFPm12CnhqEncMqZDMtTUYBt70StJSH3dQg0Mf/nUK5eub1blyQtvwVAUQ1SCkPYZlqnyoPxgT7fyE/hG5fsHbqLzxcege7Fk3rqOhM5wfB3D6xGkWv6kjXeNf8RqDhmtYSiixFAEBn2vBusbPqK5oZRJMicMpDn8Fbe6hx2usoRHwu+eDyaLylgTZXVaPHw0Vdc02iVLMY1Czy07axvlwKpquwcO9ySl/DjVR30jWSPffWHt89X4eeehqnBv9UFqma1pKLX9Ou5KJFjyBhEAdbo4fzEIBMKjSd4bEZD0nqJNjmus8cASFPPW5pGxsBqNHD5d3qW0RSzYVcjqgF07Daw5tcELhES0xSqLWHRpsep8snp2iVh+PDZePNA/Ghw3ewFaAzUJgagmJpnxdME8Nd/trDio8e8rQQnpATPU5PDdqBEreeEgYF0/48EKF9D80RXScOi68khxINoyQXiyMiaVw7IxJxUAiWY6jJS8rDBCGeqFVe86ENtyEl02Z97AKdzgBBhGuXvMnFWTDJwgpnmrLvoRLygraHPI0JiiNS0BPHpIzTuCOGMkfEajoitVljqlmcmtJ1mHDFS+M1FgLkgRRMAKDW06Fx2gSXIiNaFvW2eln0YFmKXa6eotUYOVgAZT+v5c7zNvDc75tQ3DywNvBZx9R3MiKBZiuOI11TXLsCPYPe05nh3Vf2xaD08ZPx2sqbPc4MoZfXpDyC+h705IKN9DKtnxFZN593+gGAdf6P1e8rin6+v/4lTH7To63djKYbJ3MBGilzZWmaH+LbykvTulQW13aToBWIrHzt7cgE7UNA9HCBFpbMLr3l+mM96azyzUSQSndN13h1Bga6PdPibSVrBZNJ+dLaLvzy1/vAPNGIGOwucbEWGttpx4wzY/3uTyXO2sMymertO0dVWHm9B1dzn0N75py8z3W1oYax9Up7FSiWDvjJp1w95WGPSa2Hywj4p7urufP8XqVPp9LriDqSVx+OeCvhhxv9cKEzw+9nbvSLI5gn+/zxeg/mV7e51Jjx8T3/7igvpBJMMO3KqxbfX6OCtji3AXplm3+ASoIWi5pMN56kZnq0Lwvtred4RHl0M8eznc6WRh7EoK/0ZXl7+NU/Zc76aF+nkR2x4BgMmsXl+y834N/DKmdjoKuNs8UM8B3R43fjsoC9+1O+EZWoVeT/mOyr6UAbI18AAAAASUVORK5CYII="
-      width={45}
-      height={45}
+      width={35}
+      height={35}
     />
   </svg>
 );
