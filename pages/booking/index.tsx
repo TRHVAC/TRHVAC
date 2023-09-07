@@ -76,14 +76,14 @@ const Booking: NextPage = () => {
             We are here for you
           </h2>
 
-          <div className="flex flex-col gap-1 text-tr-gray">
+          <div className="flexcenter flex-col gap-1 text-tr-gray">
             <div className="text-tr-blue font-semibold whitespace-pre-line ">
               Call{" "}
               <Link className="text-tr-red" href={TR_CONTACT_INFO["Phone"].ref}>
                 {TR_CONTACT_INFO["Phone"].title}
               </Link>
               <span>
-                <span></span> or{" "}
+                <br/> or{" "}
                 <span className="text-tr-skyBlue">book online</span> here.
               </span>
             </div>
@@ -104,9 +104,9 @@ const Booking: NextPage = () => {
         </div>
 
         {/* TODO: Update the form */}
-        <div className="w-full mt-10 md:w-3/5 border-2 rounded-t-md shadow-xl mb-8 pb-5 overflow-hidden border-gray-200 md:ml-10">
+        <div className="w-full mt-10 md:w-3/5 border-2 rounded-t-md md:shadow-xl mb-8 pb-5 overflow-hidden border-gray-200 md:ml-10">
           <div className="w-full m-0 text-xl text-center p-5 bg-tr-skyBlue text-white  px-4 border border-gray-300  rounded-t-md shadow-sm font-medium focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:outline-none pb-3">
-            Book An Appointment
+            Book an appointment
           </div>
           <div className="mt-12 px-4">
             <form

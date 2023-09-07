@@ -36,11 +36,9 @@ export const ServiceCategory: Record<
   Service[]
 > = {
   COOLING: [
-    { title: 'Air Conditioner Maintenace', image: AirConditionerMaintenace },
-    { title: 'Air Conditioner Protection', image: AirConditionerProtection },
     { title: 'Air Conditioner Repair', image: AirConditionerRepair },
+    // 이미지 교체 요함
     { title: 'Air Conditioner Replacement', image: AirConditionerReplacement },
-    { title: 'Central Heat Pump', image: CentralHeatPump },
     { title: 'Ductless Heat Pump', image: DuctlessHeatPump },
   ],
   HEATING: [
@@ -53,7 +51,8 @@ export const ServiceCategory: Record<
     { title: 'Furnace Replacement', image: FurnaceReplacement },
   ],
   IAQ: [
-    { title: 'Air Purification System', image: AirPurificationSystem },
+    // 이미지 교체 요함
+    { title: 'Duct Work', image: AirPurificationSystem },
     { title: 'Heat Recovery Ventilator', image: HeatRecoveryVentilator },
     { title: 'Humidifier', image: Humidifier },
     { title: 'UV Light', image: UVLight },
@@ -61,6 +60,7 @@ export const ServiceCategory: Record<
   WATERHEATER: [
     { title: 'Tankless Water Heater', image: TanklessWaterHeater },
     { title: 'Water Heater Repair', image: WaterHeaterRepair },
+    //이미지 교체 요함
     { title: 'Water Heater', image: WaterHeater },
   ],
 };
