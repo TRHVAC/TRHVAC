@@ -32,7 +32,7 @@ const ServiceCategoryPage: NextPage = () => {
 
       {/* Our Service Section */}
       <div className="flexcenter flex-col mt-10 bg-tr-lightGray py-4 px-2">
-        <div className="text-xl font-bold">Ourf Service</div>
+        <div className="text-xl font-bold">Our Service</div>
 
         <div className="grid grid-cols-2 gap-2 px-4 mt-4 sm:grid-cols-3">
           {serviceList.map((service, index) => {
