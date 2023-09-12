@@ -2,11 +2,8 @@ import { StaticImageData } from 'next/image';
 
 import { THeroImageCategory } from '@utils/constants';
 
-import AirConditionerMaintenace from '@public/services/cooling/Air-Conditioner-Maintenace.jpg';
-import AirConditionerProtection from '@public/services/cooling/Air-Conditioner-Protection.jpg';
 import AirConditionerRepair from '@public/services/cooling/Air-Conditioner-Repair.jpg';
 import AirConditionerReplacement from '@public/services/cooling/Air-Conditioner-Replacement.jpg';
-import CentralHeatPump from '@public/services/cooling/Central-Heat-Pump.jpg';
 import DuctlessHeatPump from '@public/services/cooling/Ductless-Heat-Pump.jpg';
 
 import AirHandler from '@public/services/heating/Air-Handler.jpg';
@@ -15,7 +12,7 @@ import HCentralHeatPump from '@public/services/heating/Central-Heat-Pump.jpg';
 import HDuctlessHeatPump from '@public/services/heating/Ductless-Heat-Pump.jpg';
 import FurnaceAndBoilerRepair from '@public/services/heating/Furnace-And-Boiler-Repair.jpg';
 import FurnaceMaintenance from '@public/services/heating/Furnace-Maintenance.jpg';
-import FurnaceReplacement from '@public/services/heating/Furnace-Replacement.jpeg';
+import FurnaceReplacement from '@public/services/heating/Furnace-Replacement.jpg';
 
 import AirPurificationSystem from '@public/services/iaq/Air-Purification-System.jpg';
 import HeatRecoveryVentilator from '@public/services/iaq/Heat-Recovery-Ventilator.jpg';
@@ -37,8 +34,7 @@ export const ServiceCategory: Record<
 > = {
   COOLING: [
     { title: 'Air Conditioner Repair', image: AirConditionerRepair },
-    // 이미지 교체 요함
-    { title: 'Air Conditioner Replacement', image: AirConditionerReplacement },
+    { title: 'Air Conditioner Replacement', image: AirConditionerReplacement }, // 이미지 교체 요함
     { title: 'Ductless Heat Pump', image: DuctlessHeatPump },
   ],
   HEATING: [
@@ -51,8 +47,7 @@ export const ServiceCategory: Record<
     { title: 'Furnace Replacement', image: FurnaceReplacement },
   ],
   IAQ: [
-    // 이미지 교체 요함
-    { title: 'Duct Work', image: AirPurificationSystem },
+    { title: 'Duct Work', image: AirPurificationSystem }, // 이미지 교체 요함
     { title: 'Heat Recovery Ventilator', image: HeatRecoveryVentilator },
     { title: 'Humidifier', image: Humidifier },
     { title: 'UV Light', image: UVLight },
@@ -60,7 +55,6 @@ export const ServiceCategory: Record<
   WATERHEATER: [
     { title: 'Tankless Water Heater', image: TanklessWaterHeater },
     { title: 'Water Heater Repair', image: WaterHeaterRepair },
-    //이미지 교체 요함
-    { title: 'Water Heater', image: WaterHeater },
+    { title: 'Water Heater', image: WaterHeater }, //이미지 교체 요함
   ],
 };

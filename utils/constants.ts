@@ -10,7 +10,6 @@ import AirHandlerIcon from '@components/icons/home/AirHandler';
 import GasLineIcon from '@components/icons/home/GasLineIcon';
 import WaterHeaterIcon from '@components/icons/home/WaterHeaterIcon';
 import { FurnaceIcon } from '@components/icons/home/FurnaceIcon';
-import { MaintenanceIcon } from '@components/icons/home/MaintenanceIcon';
 import { TanklessIcon } from '@components/icons/home/TanklessIcon';
 import { MapIcon } from '@components/icons/MapIcon';
 import { MailIcon } from '@components/icons/MailIcon';
@@ -110,3 +109,10 @@ export type THeroImageCategory =
   | 'IAQ'
   | 'WATERHEATER'
   | 'BOOKING';
+
+export const TR_ADVANTAGE_LIST = [
+  'Service in GTA Area',
+  'Gas & A/C Licensed',
+  'TSSA & 2 Million Insured',
+  'Affordable Price',
+];

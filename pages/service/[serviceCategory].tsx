@@ -3,9 +3,10 @@ import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 
-import { THeroImageCategory } from '@utils/constants';
+import { THeroImageCategory, TR_ADVANTAGE_LIST } from '@utils/constants';
 import Hero from '@components/hero';
-import Map from '@components/map';
+import BookingInfoBox from '@components/bookingInfoBox';
+import BookingInfoImg from '@public/services/booking-info.jpg';
 
 import { ServiceCategory } from './constants';
 
@@ -56,8 +57,30 @@ const ServiceCategoryPage: NextPage = () => {
         </div>
       </div>
 
-      {/* Google Map */}
-      {/* <Map /> */}
+      {/* Booking Info section */}
+      <div className="sm:grid sm:grid-cols-2 mt-10">
+        <div className="justify-center relative bg-[#2C3546B0]/100 hidden sm:flex">
+          <div className="z-10 text-white leading-9 text-xl py-8">
+            {TR_ADVANTAGE_LIST.map((advantage, idx) => (
+              <div key={`${advantage}-${idx}`}>{advantage}</div>
+            ))}
+          </div>
+
+          <div className="opacity-20">
+            <Image
+              src={BookingInfoImg}
+              alt="Booking Info Image"
+              placeholder="blur"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+
+        <div className="flex">
+          <BookingInfoBox />
+        </div>
+      </div>
     </>
   );
 };
