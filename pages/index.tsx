@@ -10,13 +10,15 @@ import { StarIcon } from '@components/icons/StarIcon';
 import { ReviewCustomerA } from '@components/icons/home/ReviewCustomerA';
 import { ReviewCustomerB } from '@components/icons/home/ReviewCustomerB';
 import { ReviewCustomerC } from '@components/icons/home/ReviewCustomerC';
-import Map from '@components/map';
+import BookingInfoBox from '@components/bookingInfoBox';
 import {
+  TR_ADVANTAGE_LIST,
   TR_GOOGLE_REVIEW_LINK,
   TR_SERVICE_ITEMS,
   TR_SPECIALTY_ITEMS,
 } from '@utils/constants';
 import Carousel from '@components/carousel';
+import HeatingHero from '@public/hero/HeatingHero.jpg';
 
 const reviewItems = [
   {
@@ -130,13 +132,16 @@ export default function Home() {
 
       {/* Advantage Section */}
       <div className="grid grid-cols-2 gap-8 relative p-6 mt-10 overflow-hidde bg-[#2C3546B0]/100 text-sm sm:bg-tr-blue/80 sm:flexcenter sm:flex-row sm:gap-0 sm:p-12 sm:text-base sm:mt-24">
-        <div className="text-white flex-1 text-center z-10">Service in GTA Area</div>
-
-        <div className="text-white flex-1 text-center z-10">Gas & A/C Licensed</div>
-
-        <div className="text-white flex-1 text-center z-10">TSSA & 2 Million Insured</div>
-
-        <div className="text-white flex-1 text-center z-10">Affordable Price</div>
+        {TR_ADVANTAGE_LIST.map((advantage, idx) => {
+          return (
+            <div
+              key={`${advantage}-${idx}`}
+              className="text-white flex-1 text-center z-10"
+            >
+              {advantage}
+            </div>
+          );
+        })}
 
         <div className="opacity-20 absolute w-full h-full sm:opacity-50">
           <Image
@@ -218,8 +223,22 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Google Map section */}
-      {/* <Map /> */}
+      {/* Booking Info section */}
+      {/* TODO: need to replace the background image */}
+      <div className="flexcenter flex-col mt-10 w-full">
+        <div className="opacity-60 h-64 hidden sm:flex">
+          <Image
+            src={HeatingHero}
+            alt="Background Image for Booking Button"
+            placeholder="blur"
+            className="object-cover"
+          />
+        </div>
+
+        <div className="flex z-10 sm:mt-[-13rem] sm:justify-center w-full sm:w-fit">
+          <BookingInfoBox />
+        </div>
+      </div>
     </div>
   );
 }

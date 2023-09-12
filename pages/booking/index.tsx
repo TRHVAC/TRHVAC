@@ -1,35 +1,37 @@
-import type { NextPage } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { useForm } from "react-hook-form";
+import type { NextPage } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useForm } from 'react-hook-form';
 
-import useMutation from "@libs/client/useMutation";
-import Hero from "@components/hero";
-import { TR_CONTACT_INFO } from "@utils/constants";
-import BookingPerson from "@public/booking/booking-person.jpg";
+import useMutation from '@libs/client/useMutation';
+import Hero from '@components/hero';
+import { TR_CONTACT_INFO } from '@utils/constants';
+import BookingPerson from '@public/booking/booking-person.png';
+import { CalendarIcon } from '@components/icons/CalendarIcon';
+import { ClockIcon } from '@components/icons/ClockIcon';
 
 export const bookingDetails = (iconColor: string) => {
   return (
     <>
-      <div>Monday - Saturday</div>
-
-      <div>09:00 am - 07:00 pm</div>
-
-      <Link
-        href={TR_CONTACT_INFO["Phone"].ref}
-        className="flex items-center gap-2"
-      >
-        {TR_CONTACT_INFO["Phone"].icon(iconColor)}
-        {TR_CONTACT_INFO["Phone"].title}
+      <Link href={TR_CONTACT_INFO['Address'].ref} className="flex items-center gap-2">
+        {TR_CONTACT_INFO['Address'].icon(iconColor)}
+        {TR_CONTACT_INFO['Address'].title}
       </Link>
 
-      <Link
-        href={TR_CONTACT_INFO["Address"].ref}
-        className="flex items-center gap-2"
-      >
-        {TR_CONTACT_INFO["Address"].icon(iconColor)}
-        {TR_CONTACT_INFO["Address"].title}
+      <Link href={TR_CONTACT_INFO['Phone'].ref} className="flex items-center gap-2">
+        {TR_CONTACT_INFO['Phone'].icon(iconColor)}
+        {TR_CONTACT_INFO['Phone'].title}
       </Link>
+
+      <div className="flex items-center gap-2">
+        <CalendarIcon />
+        <div>Monday - Saturday</div>
+      </div>
+
+      <div className="flex items-center gap-2">
+        <ClockIcon />
+        <div>09:00 am - 07:00 pm</div>
+      </div>
     </>
   );
 };
@@ -53,8 +55,7 @@ interface MutationResult {
 }
 
 const Booking: NextPage = () => {
-  const [book, { loading, data, error }] =
-    useMutation<MutationResult>("/api/sendMail");
+  const [book, { loading, data, error }] = useMutation<MutationResult>('/api/sendMail');
   const {
     register,
     handleSubmit,
@@ -78,19 +79,16 @@ const Booking: NextPage = () => {
 
           <div className="flexcenter flex-col gap-1 text-tr-gray">
             <div className="text-tr-blue font-semibold whitespace-pre-line ">
-              Call{" "}
-              <Link className="text-tr-red" href={TR_CONTACT_INFO["Phone"].ref}>
-                {TR_CONTACT_INFO["Phone"].title}
+              Call{' '}
+              <Link className="text-tr-red" href={TR_CONTACT_INFO['Phone'].ref}>
+                {TR_CONTACT_INFO['Phone'].title}
               </Link>
               <span>
-                <br/> or{" "}
-                <span className="text-tr-skyBlue">book online</span> here.
+                <br /> or <span className="text-tr-skyBlue">book online</span> here.
               </span>
             </div>
 
-            <span className="hidden md:inline-block">
-              {bookingDetails("#676661")}
-            </span>
+            <span className="hidden md:inline-block">{bookingDetails('#676661')}</span>
           </div>
 
           <div className="hidden md:block py-4">
@@ -116,10 +114,10 @@ const Booking: NextPage = () => {
               <div className="rounded-md gap-4 relative flex flex-col w-full items-center shadow-sm ">
                 <div className="flex flex-col md:flex-row gap-4 w-full">
                   <input
-                    {...register("name", {
-                      required: "user name is required",
+                    {...register('name', {
+                      required: 'user name is required',
                       minLength: {
-                        message: "the user name should be longer than 5 chars",
+                        message: 'the user name should be longer than 5 chars',
                         value: 2,
                       },
                     })}
@@ -130,7 +128,7 @@ const Booking: NextPage = () => {
                   />
 
                   <select
-                    {...register("type", {})}
+                    {...register('type', {})}
                     className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   >
                     <option disabled>Appliance Type</option>
@@ -144,13 +142,13 @@ const Booking: NextPage = () => {
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 w-full">
                   <input
-                    {...register("date", {})}
+                    {...register('date', {})}
                     type="date"
                     required={false}
                     className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   />
                   <select
-                    {...register("time", {})}
+                    {...register('time', {})}
                     className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   >
                     <option value="" disabled>
@@ -173,14 +171,14 @@ const Booking: NextPage = () => {
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 w-full">
                   <input
-                    {...register("email", {})}
+                    {...register('email', {})}
                     type="text"
                     required={false}
                     placeholder="Email Address"
                     className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   />
                   <input
-                    {...register("phone", {})}
+                    {...register('phone', {})}
                     type="text"
                     required={false}
                     placeholder="Phone number"
@@ -189,7 +187,7 @@ const Booking: NextPage = () => {
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 w-full">
                   <input
-                    {...register("address", {})}
+                    {...register('address', {})}
                     type="text"
                     required={false}
                     placeholder="Street Address"
@@ -198,7 +196,7 @@ const Booking: NextPage = () => {
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 w-full">
                   <input
-                    {...register("city", {})}
+                    {...register('city', {})}
                     type="text"
                     required={false}
                     placeholder="City"
@@ -206,7 +204,7 @@ const Booking: NextPage = () => {
                   />
 
                   <input
-                    {...register("postal", {})}
+                    {...register('postal', {})}
                     type="text"
                     required={false}
                     placeholder="Postal Code"
@@ -215,7 +213,7 @@ const Booking: NextPage = () => {
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 w-full">
                   <input
-                    {...register("note", {})}
+                    {...register('note', {})}
                     type="text"
                     required={false}
                     placeholder="Commentss"
@@ -224,14 +222,12 @@ const Booking: NextPage = () => {
                 </div>
               </div>
               <button className="w-96 bg-tr-skyBlue  text-white  px-4 border border-transparent rounded-md shadow-sm font-medium focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:outline-none py-3 text-base">
-                {loading ? "Loading..." : "Book Now"}
+                {loading ? 'Loading...' : 'Book Now'}
               </button>
 
               {/* tell that booking is done. => show booking info */}
               <span className="text-red-500">
-                {data?.ok
-                  ? "booking done. Our team will contact you shortly."
-                  : ""}
+                {data?.ok ? 'booking done. Our team will contact you shortly.' : ''}
               </span>
             </form>
           </div>

@@ -29,7 +29,7 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/booking",
-    "components/map.tsx"
+    "components/bookingInfoBox.tsx"
   ],
   "exclude": ["node_modules"]
 }
