@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -11,6 +11,43 @@ import classNames from "classnames";
 export default function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
+  const [isMobileScreen, setIsMobileScreen] = useState(false);
+
+  // 화면 크기가 변경될 때 반응하여 isMobileScreen 상태를 설정
+  useEffect(() => {
+    function handleResize() {
+      setIsMobileScreen(window.innerWidth <= 1024); // 가로 크기 조절
+    }
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // 초기화
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  // 가로 창 크기 조절할 때 openDropdown과 menuToggle을 모두 false로 설정(햄버거 메뉴 닫기 클릭하지 않아도 스크롤 방지 해제)
+  useEffect(() => {
+    if (!isMobileScreen) {
+      setOpenDropdown(false);
+      setMenuToggle(false);
+    }
+  }, [isMobileScreen]);
+
+
+  // 메뉴를 열거나 닫을 때 스크롤 제어
+  useEffect(() => {
+    if (openDropdown) {
+      // 메뉴가 열린 경우 스크롤 숨기기
+      document.body.style.overflow = "hidden";
+    } else {
+      // 메뉴가 닫힌 경우 스크롤 활성화
+      document.body.style.overflow = "visible";
+    }
+    // 컴포넌트가 언마운트될 때 스크롤 상태 초기화
+    return () => {
+      document.body.style.overflow = "visible"; // 컴포넌트 언마운트 시 스크롤 상태 초기화
+    };
+  }, [openDropdown]);
   
 
   return (
@@ -41,20 +78,30 @@ export default function Navbar() {
         </Link>
         
         <div className='px-1 md:hidden group'>
+
           <div className='w-full h-full flexcenter px-3'>
-          <button onClick={() => {setMenuToggle(!menuToggle); setOpenDropdown(!openDropdown);}}>
-              {menuToggle ? (
-                <CloseIcon/>
-              ) : (
-                <BurgerIcon/>
-              )}
+            <button onClick={() => {setMenuToggle(!menuToggle); setOpenDropdown(!openDropdown); }}>
+                {menuToggle ? (
+                  <CloseIcon/>
+                ) : (
+                  <BurgerIcon/>
+                )}
             </button>
-              
           </div>
 
-          <div className={classNames("right-0 absolute md:hidden drop-shadow-lg bg-tr-lightGray z-100 h-screen py-4 shadow-box iPhone12:px-7",
-              {hidden: !openDropdown}
-              )}>
+          <div className={classNames("fixed bottom-0 right-0 w-full h-full md:hidden drop-shadow-lg bg-tr-lightGray z-100 py-4 shadow-box iPhone12:px-7",
+              { 'hidden': !openDropdown }
+          )}>
+
+            <div className='flex justify-end px-3 px-5 z-100'>
+              <button onClick={() => {setMenuToggle(!menuToggle); setOpenDropdown(!openDropdown); }}>
+                  {menuToggle ? (
+                    <CloseIcon/>
+                  ) : (
+                    <BurgerIcon/>
+                  )}
+              </button>
+            </div>
 
             <div className='px-8 py-4 flex'>
               <Link href="/" className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4" legacyBehavior>
@@ -100,6 +147,7 @@ export default function Navbar() {
                   {TR_CONTACT_INFO['Phone'].title}
                 </Link>
               </div>
+
             </div>
 
           </div>
@@ -151,7 +199,9 @@ export default function Navbar() {
               {TR_CONTACT_INFO['Phone'].title}
             </Link>
           </div>
+
         </div>
+
       </div>
     </>
   );
