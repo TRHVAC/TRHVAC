@@ -5,7 +5,7 @@ import { bookingDetails } from 'pages/booking';
 export default function BookingInfoBox() {
   return (
     <div className="bg-tr-skyBlue flex items-center flex-col w-full text-white py-8 sm:px-40">
-      <div className="flex flex-col leading-9 text-xl">{bookingDetails('#FFFFFF')}</div>
+      <div className="flex flex-col text-base leading-8 sm:leading-9 sm:text-lg">{bookingDetails('#FFFFFF')}</div>
 
       <Link
         href="/booking"

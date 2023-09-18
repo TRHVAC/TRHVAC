@@ -38,7 +38,7 @@ export default function Footer() {
 
             <div className="mb-2">Monday - Saturday</div>
 
-            <div className="mb-2">09:00 am - 19:00 pm</div>
+            <div className="mb-2">09:00 - 19:00</div>
           </div>
 
           {/* Products Section */}

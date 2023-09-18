@@ -63,7 +63,7 @@ export default function Navbar() {
                 className="hover:text-tr-skyBlue flexcenter gap-1"
               >
                 <div className="p-1">{TR_CONTACT_INFO[item].icon()}</div>
-                <div className="hidden iPhone12:flex">{TR_CONTACT_INFO[item].title}</div>
+                <div className="hidden sm:flex">{TR_CONTACT_INFO[item].title}</div>
               </Link>
             );
           })}
@@ -72,8 +72,8 @@ export default function Navbar() {
 
       
       {/* Navbar Section - Hamburger Menu*/}
-      <div className="flex justify-between bg-white sticky top-0 z-[1000] px-0 md:px-10">
-        <Link className="flexcenter" href="/">
+      <div className="flex justify-between bg-white sticky top-0 z-[1000] px-0 md:px-10 shadow-xl">
+        <Link className="flexcenter px-4 py-3" href="/">
           <Image src={NAV_LOGO} alt="company logo" width={200} height={100}/>
         </Link>
         
@@ -89,7 +89,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          <div className={classNames("fixed bottom-0 right-0 w-full h-full md:hidden drop-shadow-lg bg-tr-lightGray z-100 py-4 shadow-box iPhone12:px-7",
+          <div className={classNames("fixed bottom-0 right-0 w-full h-full md:hidden drop-shadow-lg bg-tr-lightGray z-100 py-9 shadow-box iPhone12:px-7",
               { 'hidden': !openDropdown }
           )}>
 
@@ -133,25 +133,22 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <div className="bg-tr-skyBlue gap-3 flex items-center md:hidden pr-3 py-3">
+            <div className="bg-tr-skyBlue gap-3 flex items-center md:hidden px-5 py-4">
               <Link href={TR_CONTACT_INFO['Phone'].ref}>
                 <div className="bg-white p-3 ml-4">
                     {TR_CONTACT_INFO['Phone'].icon('#FD2156', 26, 26)}
                 </div>
               </Link>
 
-              <div>
-                <div className="text-xs text-tr-blue font-medium sm:text-sm mb-2">Mon-Sat 9am-7pm</div>
+              <div className="px-4">
+                <div className="text-tr-blue font-medium">Mon-Sat 9am-7pm</div>
 
-                <Link className="text-sm font-bold sm:text-base text-white" href={TR_CONTACT_INFO['Phone'].ref}>
+                <Link className="text-lg font-bold text-white" href={TR_CONTACT_INFO['Phone'].ref}>
                   {TR_CONTACT_INFO['Phone'].title}
                 </Link>
               </div>
-
             </div>
-
           </div>
-
         </div>
 
         {/* Navbar Section - Mobile*/}

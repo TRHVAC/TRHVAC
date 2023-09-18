@@ -216,7 +216,7 @@ const Booking: NextPage = () => {
                     {...register('note', {})}
                     type="text"
                     required={false}
-                    placeholder="Commentss"
+                    placeholder="Comments"
                     className="appearance-none pl-7 w-full px-3 h-20 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>

@@ -156,7 +156,7 @@ export default function Home() {
       {/* Our Specialty Section */}
       <div className="flex flex-row bg-tr-lightGray mt-10 sm:mt-20">
         <div className="bg-tr-skyBlue flexcenter sm:py-14">
-          <div className="rotate-[270deg] whitespace-pre-line text-xl text-white font-extrabold text-center sm:text-2xl">
+          <div className="rotate-[270deg] whitespace-pre-line text-lg text-white font-extrabold text-center sm:text-2xl">
             {CUR_YEAR - 2014} Years {'\n'} Experience
           </div>
         </div>
@@ -166,14 +166,14 @@ export default function Home() {
             Our Specialty
           </div>
 
-          <div className="grid grid-cols-3 gap-3 mt-5 font-medium sm:flex sm:flex-row sm:gap-0">
+          <div className="grid grid-cols-2 mt-5 font-medium sm:flex sm:flex-row sm:gap-0">
             {TR_SPECIALTY_ITEMS.map((item, index) => {
               return (
                 <div
-                  className="flexcenter flex-col flex-1"
+                  className="sm:flexcenter flex-col flex-1"
                   key={`${item.title}-${index}`}
                 >
-                  <div className="mb-2 text-base sm:text-lg">{item.title}</div>
+                  <div className="mb-2 text-sm sm:text-lg px-3 sm:px-0">{item.title}</div>
 
                   <div className="hidden sm:block">
                     <item.icon />
