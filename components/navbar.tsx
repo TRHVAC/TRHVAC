@@ -74,7 +74,7 @@ export default function Navbar() {
       {/* Navbar Section - Hamburger Menu*/}
       <div className="flex justify-between bg-white sticky top-0 z-[1000] px-0 md:px-10 shadow-xl">
         <Link className="flexcenter px-4 py-3" href="/">
-          <Image src={NAV_LOGO} alt="company logo" width={200} height={100}/>
+          <Image src={NAV_LOGO} alt="company logo" className="w-[180px] h-[auto] sm:w-[250px]"/>
         </Link>
         
         <div className='px-1 md:hidden group'>
