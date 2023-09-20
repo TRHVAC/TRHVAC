@@ -17,7 +17,7 @@ import {
   TR_SERVICE_ITEMS,
   TR_SPECIALTY_ITEMS,
 } from '@utils/constants';
-import Carousel from '@components/carousel';
+// import Carousel from '@components/carousel';
 import HeatingHero from '@public/hero/HeatingHero.jpg';
 
 const reviewItems = [
@@ -128,7 +128,7 @@ export default function Home() {
       </div>
 
       {/* Our Previous Work section */}
-      <Carousel />
+      {/* <Carousel /> */}
 
       {/* Advantage Section */}
       <div className="grid grid-cols-2 gap-8 relative p-6 mt-10 overflow-hidde bg-[#2C3546B0]/100 text-sm sm:bg-tr-blue/80 sm:flexcenter sm:flex-row sm:gap-0 sm:p-12 sm:text-base sm:mt-24">

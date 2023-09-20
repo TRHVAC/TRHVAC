@@ -65,30 +65,32 @@ const settings = {
 
 export default function Carousel() {
   return (
-    <div>
+    <>
       <div>
-        <h2 className="text-center mt-8 text-tr-blue text-xl font-bold sm:text-2xl sm:mt-10">
-          Our Previous Work
-        </h2>
+        <div>
+          <h2 className="text-center mt-8 text-tr-blue text-xl font-bold sm:text-2xl sm:mt-10">
+            Our Previous Work
+          </h2>
 
-        <Link className="text-tr-skyBlue flexcenter mt-2 mb-6" href={Instagram_Link}>
-          See all works
-        </Link>
+          <Link className="text-tr-skyBlue flexcenter mt-2 mb-6" href={Instagram_Link}>
+            See all works
+          </Link>
 
-        <Slider {...settings} className="w-10/12 m-auto">
-          {carouselImages.map((imageSrc, index) => (
-            <div key={index} className="w-full m-auto px-3">
-              <Link href={`${Instagram_Link}`}>
-                <Image
-                  src={imageSrc}
-                  alt={`carousel-img-${index + 1}`}
-                  className="w-full h-full"
-                />
-              </Link>
-            </div>
-          ))}
-        </Slider>
+          <Slider {...settings} className="w-10/12 m-auto">
+            {carouselImages.map((imageSrc, index) => (
+              <div key={index} className="w-full m-auto px-3">
+                <Link href={`${Instagram_Link}`}>
+                  <Image
+                    src={imageSrc}
+                    alt={`carousel-img-${index + 1}`}
+                    className="w-full h-full"
+                  />
+                </Link>
+              </div>
+            ))}
+          </Slider>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
