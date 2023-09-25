@@ -39,11 +39,12 @@ const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' }) => {
 
   return (
     <div className={`px-4 h-48 flex item-center relative sm:h-[550px] sm:px-10 sm:py-10`}>
-      <div className="-z-10">
+      <div className="-z-10 absolute w-full h-full top-0 left-0">
         <Image
           src={getHeroImage()}
-          alt="test hero"
+          alt="hero"
           placeholder="blur"
+          sizes="100%"
           fill
           className="object-cover object-left"
         />
