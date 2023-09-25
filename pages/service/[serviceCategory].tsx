@@ -66,11 +66,12 @@ const ServiceCategoryPage: NextPage = () => {
             ))}
           </div>
 
-          <div className="opacity-20">
+          <div className="opacity-20 absolute w-full h-full">
             <Image
               src={BookingInfoImg}
               alt="Booking Info Image"
               placeholder="blur"
+              sizes="100%"
               fill
               className="object-cover"
             />

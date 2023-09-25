@@ -72,15 +72,14 @@ export default function Home() {
                   {service.title}
                 </div>
 
-                <div className="opacity-50">
+                <div className="opacity-50 absolute w-full h-full top-0 left-0">
                   <Image
                     src={service.image}
                     alt={service.title}
                     placeholder="blur"
+                    sizes="100%"
                     fill
-                    style={{
-                      objectFit: 'cover',
-                    }}
+                    className="object-cover"
                   />
                 </div>
               </Link>
@@ -114,15 +113,14 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex-1 absolute w-full h-full opacity-10 sm:relative sm:w-auto sm:h-auto sm:opacity-100">
+        <div className="flex-1 relative">
           <Image
             src={AboutImage}
             alt="Home-About"
             placeholder="blur"
             fill
-            style={{
-              objectFit: 'cover',
-            }}
+            sizes="100%"
+            className="object-cover"
           />
         </div>
       </div>
