@@ -1,25 +1,25 @@
-import React, { useMemo } from 'react';
-import type { NextPage } from 'next';
-import { useRouter } from 'next/router';
-import Image from 'next/image';
+import React, { useMemo } from "react";
+import type { NextPage } from "next";
+import { useRouter } from "next/router";
+import Image from "next/image";
 
-import { THeroImageCategory, TR_ADVANTAGE_LIST } from '@utils/constants';
-import Hero from '@components/hero';
-import BookingInfoBox from '@components/bookingInfoBox';
-import BookingInfoImg from '@public/services/booking-info.jpg';
+import { THeroImageCategory, TR_ADVANTAGE_LIST } from "@utils/constants";
+import Hero from "@components/hero";
+import BookingInfoBox from "@components/bookingInfoBox";
+import BookingInfoImg from "@public/services/booking-info.jpg";
 
-import { ServiceCategory } from './constants';
+import { ServiceCategory } from "@components/constants";
 
 const ServiceCategoryPage: NextPage = () => {
   const router = useRouter();
   const { serviceCategory } = router.query;
 
   const normalizedServiceCategory = useMemo(() => {
-    if (typeof serviceCategory !== 'string') return null;
+    if (typeof serviceCategory !== "string") return null;
 
     return serviceCategory.toUpperCase() as Exclude<
       THeroImageCategory,
-      'HOME' | 'BOOKING'
+      "HOME" | "BOOKING"
     >;
   }, [serviceCategory]);
 
@@ -38,10 +38,15 @@ const ServiceCategoryPage: NextPage = () => {
         <div className="grid grid-cols-2 gap-2 px-4 mt-4 sm:grid-cols-3">
           {serviceList.map((service, index) => {
             return (
-              <div className="flex flex-col mt-2" key={`${service.title}-${index}`}>
+              <div
+                className="flex flex-col mt-2"
+                key={`${service.title}-${index}`}
+              >
                 <Image
                   className={`opacity-70 object-cover w-[95%] ${
-                    normalizedServiceCategory === 'WATERHEATER' ? 'h-full' : 'h-fit'
+                    normalizedServiceCategory === "WATERHEATER"
+                      ? "h-full"
+                      : "h-fit"
                   } sm:h-[95%]`}
                   src={service.image}
                   alt={service.title}
