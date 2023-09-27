@@ -51,8 +51,8 @@ export default function Navbar() {
   return (
     <>
       {/* Intro Header */}
-      <div className="flex justify-end items-center bg-white py-5 px-0 md:px-10">
-        <div className="flexcenter gap-2 sm:gap-5 mr-5 text-xs sm:text-sm">
+      <div className="flex justify-end items-center bg-white pt-6 pb-1 px-0 md:px-10 md:py-3">
+        <div className="flexcenter gap-3 sm:gap-5 mr-5 text-xs sm:text-sm">
           {['Address', 'Email', 'Instagram'].map((item, index) => {
             return (
               <Link
@@ -70,13 +70,8 @@ export default function Navbar() {
 
       {/* Navbar Section - Hamburger Menu*/}
       <div className="flex justify-between bg-white sticky top-0 z-[1000] px-0 md:px-10 shadow-xl">
-        <Link className="flexcenter px-4 py-3" href="/">
-          <Image
-            src={NAV_LOGO}
-            alt="company logo"
-            className="w-[180px] h-[auto] sm:w-[250px]"
-            priority={true}
-          />
+        <Link className="flexcenter px-4 pt-6 pb-2 sm:py-0" href="/">
+          <Image src={NAV_LOGO} alt="company logo" className="w-[170px] h-[auto] sm:w-[190px]"/>
         </Link>
 
         <div className="px-1 md:hidden group">
