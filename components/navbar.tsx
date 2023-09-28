@@ -51,7 +51,7 @@ export default function Navbar() {
   return (
     <>
       {/* Intro Header */}
-      <div className="flex justify-end items-center bg-white pt-6 pb-1 px-0 md:px-10 md:py-3">
+      <div className="flex justify-end items-center bg-white pt-2 pb-1 px-0 md:px-10 md:py-3">
         <div className="flexcenter gap-3 sm:gap-5 mr-5 text-xs sm:text-sm">
           {['Address', 'Email', 'Instagram'].map((item, index) => {
             return (
@@ -70,11 +70,11 @@ export default function Navbar() {
 
       {/* Navbar Section - Hamburger Menu*/}
       <div className="flex justify-between bg-white sticky top-0 z-[1000] px-0 md:px-10 shadow-xl">
-        <Link className="flexcenter px-4 pt-6 pb-2 sm:py-0" href="/">
+        <Link className="flexcenter px-4 py-2 sm:py-0" href="/">
           <Image src={NAV_LOGO} alt="company logo" className="w-[170px] h-[auto] sm:w-[190px]"/>
         </Link>
 
-        <div className="px-1 md:hidden group">
+        <div className="px-1 md:hidden group relative">
           <div className="w-full h-full flexcenter px-3">
             <button
               onClick={() => {
@@ -114,6 +114,7 @@ export default function Navbar() {
                     setOpenDropdown(!openDropdown);
                     setMenuToggle(!menuToggle);
                   }}
+                  className='text-tr-skyBlue font-bold'
                 >
                   HOME
                 </a>
@@ -132,6 +133,7 @@ export default function Navbar() {
                     setOpenDropdown(!openDropdown);
                     setMenuToggle(!menuToggle);
                   }}
+                  className='text-tr-skyBlue font-bold'
                 >
                   SERVICE
                 </a>
@@ -167,15 +169,16 @@ export default function Navbar() {
                     setOpenDropdown(!openDropdown);
                     setMenuToggle(!menuToggle);
                   }}
+                  className='text-tr-skyBlue font-bold'
                 >
                   BOOKING
                 </a>
               </Link>
             </div>
 
-            <div className="bg-tr-skyBlue gap-3 flex items-center md:hidden px-5 py-4">
+            <div className="bg-tr-skyBlue flex items-center md:hidden px-8 py-4 absolute bottom-8 w-5/6 ml-8 mr-8 gap-3">
               <Link href={TR_CONTACT_INFO['Phone'].ref}>
-                <div className="bg-white p-3 ml-4">
+                <div className="bg-white p-3">
                   {TR_CONTACT_INFO['Phone'].icon('#FD2156', 26, 26)}
                 </div>
               </Link>
