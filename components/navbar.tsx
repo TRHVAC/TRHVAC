@@ -74,7 +74,7 @@ export default function Navbar() {
           <Image src={NAV_LOGO} alt="company logo" className="w-[170px] h-[auto] sm:w-[190px]"/>
         </Link>
 
-        <div className="px-1 md:hidden group">
+        <div className="px-1 md:hidden group relative">
           <div className="w-full h-full flexcenter px-3">
             <button
               onClick={() => {
@@ -173,9 +173,9 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <div className="bg-tr-skyBlue gap-3 flex items-center md:hidden px-5 py-4">
+            <div className="bg-tr-skyBlue flex items-center md:hidden px-8 py-4 absolute bottom-8 w-5/6 ml-8 mr-8 gap-3">
               <Link href={TR_CONTACT_INFO['Phone'].ref}>
-                <div className="bg-white p-3 ml-4">
+                <div className="bg-white p-3">
                   {TR_CONTACT_INFO['Phone'].icon('#FD2156', 26, 26)}
                 </div>
               </Link>
