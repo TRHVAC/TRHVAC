@@ -19,6 +19,7 @@ import {
 } from '@utils/constants';
 // import Carousel from '@components/carousel';
 import HeatingHero from '@public/hero/HeatingHero.jpg';
+import Gallery from '@components/gallery';
 
 const reviewItems = [
   {
@@ -126,7 +127,7 @@ export default function Home() {
       </div>
 
       {/* Our Previous Work section */}
-      {/* <Carousel /> */}
+      <Gallery />
 
       {/* Advantage Section */}
       <div className="grid grid-cols-2 gap-8 relative p-6 mt-10 overflow-hidde bg-[#2C3546B0]/100 text-sm sm:bg-tr-blue/80 sm:flexcenter sm:flex-row sm:gap-0 sm:p-12 sm:text-base sm:mt-24">
