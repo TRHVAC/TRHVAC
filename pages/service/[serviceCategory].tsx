@@ -65,7 +65,7 @@ const ServiceCategoryPage: NextPage = () => {
       {/* Booking Info section */}
       <div className="sm:grid sm:grid-cols-2 mt-10">
         <div className="justify-center relative bg-[#2C3546B0]/100 hidden sm:flex">
-          <div className="z-10 text-white leading-9 text-xl py-8">
+          <div className="z-10 text-white leading-9 text-lg py-8">
             {TR_ADVANTAGE_LIST.map((advantage, idx) => (
               <div key={`${advantage}-${idx}`}>{advantage}</div>
             ))}
