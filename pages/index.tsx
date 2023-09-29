@@ -114,7 +114,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex-1 relative">
+        <div className="hidden sm:block flex-1 relative">
           <Image
             src={AboutImage}
             alt="Home-About"
@@ -130,7 +130,7 @@ export default function Home() {
       <Gallery />
 
       {/* Advantage Section */}
-      <div className="grid grid-cols-2 gap-8 relative p-6 mt-10 overflow-hidde bg-[#2C3546B0]/100 text-sm sm:bg-tr-blue/80 sm:flexcenter sm:flex-row sm:gap-0 sm:p-12 sm:text-base sm:mt-24">
+      <div className="grid grid-cols-2 gap-8 relative p-6 mt-10 overflow-hidden bg-[#2C3546B0]/100 text-sm sm:bg-tr-blue/80 sm:flexcenter sm:flex-row sm:gap-0 sm:p-12 sm:text-base sm:mt-24">
         {TR_ADVANTAGE_LIST.map((advantage, idx) => {
           return (
             <div
