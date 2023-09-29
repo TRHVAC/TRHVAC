@@ -13,25 +13,25 @@ import { ClockIcon } from '@components/icons/ClockIcon';
 export const bookingDetails = (iconColor: string) => {
   return (
     <>
-      <Link href={TR_CONTACT_INFO['Address'].ref} className="flex items-center gap-2">
+      <div className="flex py-1 gap-2">
+        {/* <CalendarIcon /> */}
+        <div>Monday - Saturday</div>
+      </div>
+
+      <div className="flex py-1 gap-2">
+        {/* <ClockIcon /> */}
+        <div>09:00 am - 07:00 pm</div>
+      </div>
+
+      <Link href={TR_CONTACT_INFO['Address'].ref} className="flex py-1 gap-2">
         {TR_CONTACT_INFO['Address'].icon(iconColor)}
         {TR_CONTACT_INFO['Address'].title}
       </Link>
 
-      <Link href={TR_CONTACT_INFO['Phone'].ref} className="flex items-center gap-2">
+      <Link href={TR_CONTACT_INFO['Phone'].ref} className="flex py-1 gap-2">
         {TR_CONTACT_INFO['Phone'].icon(iconColor)}
         {TR_CONTACT_INFO['Phone'].title}
       </Link>
-
-      <div className="flex items-center gap-2">
-        <CalendarIcon />
-        <div>Monday - Saturday</div>
-      </div>
-
-      <div className="flex items-center gap-2">
-        <ClockIcon />
-        <div>09:00 am - 07:00 pm</div>
-      </div>
     </>
   );
 };
@@ -78,7 +78,7 @@ const Booking: NextPage = () => {
           </h2>
 
           <div className="flexcenter flex-col gap-1 text-tr-gray">
-            <div className="text-tr-blue font-semibold whitespace-pre-line ">
+            <div className="text-tr-blue font-semibold whitespace-pre-line mb-3">
               Call{' '}
               <Link className="text-tr-red" href={TR_CONTACT_INFO['Phone'].ref}>
                 {TR_CONTACT_INFO['Phone'].title}
