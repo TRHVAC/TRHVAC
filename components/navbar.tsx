@@ -114,7 +114,7 @@ export default function Navbar() {
                     setOpenDropdown(!openDropdown);
                     setMenuToggle(!menuToggle);
                   }}
-                  className='text-tr-skyBlue font-bold'
+                  className='text-tr-skyBlue font-bold px-2 py-2 w-full'
                 >
                   HOME
                 </a>
@@ -133,7 +133,7 @@ export default function Navbar() {
                     setOpenDropdown(!openDropdown);
                     setMenuToggle(!menuToggle);
                   }}
-                  className='text-tr-skyBlue font-bold'
+                  className='text-tr-skyBlue font-bold px-2 py-2 w-full' 
                 >
                   SERVICE
                 </a>
@@ -169,7 +169,7 @@ export default function Navbar() {
                     setOpenDropdown(!openDropdown);
                     setMenuToggle(!menuToggle);
                   }}
-                  className='text-tr-skyBlue font-bold'
+                  className='text-tr-skyBlue font-bold px-2 py-2 w-full'
                 >
                   BOOKING
                 </a>
