@@ -100,7 +100,7 @@ export default function Home() {
             TR Heating & Cooling
           </div>
 
-          <div className="mt-4 whitespace-pre-line text-sm sm:text-base">
+          <div className="text-justify mt-4 whitespace-pre-line text-sm sm:text-base">
             Introducing TR Heating and Cooling, your trusted partner for all your HVAC
             needs in Greater Toronto Area. With over a decades of industry experience, our
             dedicated team of professionals is passionate about creating comfortable
