@@ -158,7 +158,7 @@ export default function Navbar() {
             </div>
             <hr />
 
-            <div className="px-8 py-4">
+            <div className="px-8 py-4 flex">
               <Link
                 href="/booking"
                 className="hover:text-tr-skyBlue text-lg font-bold px-2 py-4"
