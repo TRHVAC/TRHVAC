@@ -64,10 +64,7 @@ const Booking: NextPage = () => {
   } = useForm<BookingForm>();
 
   const onValid = async (validForm: BookingForm) => {
-    console.log(loading);
     if (loading) return;
-    console.log("booking");
-    console.log("forming...");
     book(validForm);
   };
 
@@ -154,7 +151,7 @@ const Booking: NextPage = () => {
                     {...register("date", {})}
                     type="date"
                     required={false}
-                    className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    className=" inline-flex appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   />
                   <select
                     {...register("time", {})}
