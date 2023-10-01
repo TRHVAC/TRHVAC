@@ -1,35 +1,35 @@
-import React, { FunctionComponent, useCallback } from 'react';
-import Link from 'next/link';
-import Image, { StaticImageData } from 'next/image';
+import React, { FunctionComponent, useCallback } from "react";
+import Link from "next/link";
+import Image, { StaticImageData } from "next/image";
 
-import { HeroBodyContents, THeroImageCategory } from '@utils/constants';
-import HomeHero from '@public/hero/HomeHero.jpg';
-import CoolingHero from '@public/hero/CoolingHero.jpg';
-import HeatingHero from '@public/hero/HeatingHero.jpg';
-import IAQHero from '@public/hero/IAQHero.jpg';
-import WaterHeaterHero from '@public/hero/WaterHeaterHero.jpg';
-import BookingHero from '@public/hero/BookingHero.jpg';
+import { HeroBodyContents, THeroImageCategory } from "@utils/constants";
+import HomeHero from "@public/hero/HomeHero.jpg";
+import CoolingHero from "@public/hero/CoolingHero.jpg";
+import HeatingHero from "@public/hero/HeatingHero.jpg";
+import IAQHero from "@public/hero/IAQHero.jpg";
+import WaterHeaterHero from "@public/hero/WaterHeaterHero.jpg";
+import BookingHero from "@public/hero/BookingHero.jpg";
 
 interface HeroProps {
   heroImageCategory: THeroImageCategory;
 }
 
-const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' }) => {
+const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = "HOME" }) => {
   const getHeroImage = useCallback((): StaticImageData => {
     switch (heroImageCategory) {
-      case 'COOLING':
+      case "COOLING":
         return CoolingHero;
 
-      case 'HEATING':
+      case "HEATING":
         return HeatingHero;
 
-      case 'IAQ':
+      case "IAQ":
         return IAQHero;
 
-      case 'WATERHEATER':
+      case "WATERHEATER":
         return WaterHeaterHero;
 
-      case 'BOOKING':
+      case "BOOKING":
         return BookingHero;
 
       default:
@@ -38,7 +38,9 @@ const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' }) => {
   }, [heroImageCategory]);
 
   return (
-    <div className={`px-4 h-48 flex item-center relative sm:h-[550px] sm:px-10 sm:py-10`}>
+    <div
+      className={`px-4 h-48 flex item-center relative sm:h-[550px] sm:px-10 sm:py-10`}
+    >
       <div className="-z-10 absolute w-full h-full top-0 left-0">
         <Image
           src={getHeroImage()}
@@ -54,13 +56,13 @@ const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' }) => {
         {/* Border Line */}
         <div
           className={`w-20 border-solid border-y-8 border-l-8 ${
-            heroImageCategory === 'IAQ' ? 'border-black' : 'border-white'
+            heroImageCategory === "IAQ" ? "border-black" : "border-white"
           } hidden sm:flex`}
         />
 
         <div
           className={`flex flex-row w-full py-8 ${
-            heroImageCategory === 'IAQ' ? 'text-black' : 'text-white'
+            heroImageCategory === "IAQ" ? "text-black" : "text-white"
           }
           sm:justify-between sm:-ml-10 sm:flex-col sm:py-10
           `}
@@ -86,7 +88,7 @@ const Hero: FunctionComponent<HeroProps> = ({ heroImageCategory = 'HOME' }) => {
           <div className="flex-1 flex justify-end items-end sm:w-full sm:justify-start sm:flex-none">
             <Link
               href="/booking"
-              className="flexcenter bg-tr-red py-3 px-4 text-lg font-semibold w-fit h-1/3 sm:flex-none sm:text-2xl sm:p-4 sm:h-fit"
+              className="flexcenter text-white bg-tr-red py-3 px-4 text-lg font-semibold w-fit h-1/3 sm:flex-none sm:text-2xl sm:p-4 sm:h-fit"
             >
               Book a service
             </Link>
