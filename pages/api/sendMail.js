@@ -3,6 +3,10 @@ import { sendMail } from "@libs/server/mailService";
 const handler = async (req, res) => {
   try {
     const { method, body: form } = req;
+    if (!method) return;
+    if (!form) return;
+    console.log(method);
+    console.log("hi...");
     switch (method) {
       case "POST": {
         //Do some thing
@@ -20,11 +24,13 @@ const handler = async (req, res) => {
         note: ${form.note}\n
         `
         );
+        res.setHeader("Allow", ["POST", "GET", "PUT", "DELETE"]);
         res.status(200).send("Success");
         break;
       }
       case "GET": {
         //Do some thing
+        res.setHeader("Allow", ["POST", "GET", "PUT", "DELETE"]);
         res.status(200).send(req.auth_data);
         break;
       }
@@ -34,6 +40,7 @@ const handler = async (req, res) => {
         break;
     }
   } catch (err) {
+    res.setHeader("Allow", ["POST", "GET", "PUT", "DELETE"]);
     res.status(400).json({
       error_code: "api_one",
       message: err.message,
