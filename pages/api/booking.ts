@@ -8,7 +8,6 @@ async function handler(
   res: NextApiResponse<ResponseType>
 ) {
   // send email or async feature ....
-  console.log("new booking... seding an email...");
   return res.json({
     ok: true,
   });

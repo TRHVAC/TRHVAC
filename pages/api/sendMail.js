@@ -13,7 +13,7 @@ const handler = async (req, res) => {
         console.log(req.body);
         await sendMail(
           `New booking Request from ${form.name}`,
-          "sddublow@gmail.com",
+          process.env.NODEMAILER_EMAIL,
           `
         name: ${form.name}\n
         email:${form.email}\n
