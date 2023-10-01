@@ -128,12 +128,12 @@ const Booking: NextPage = () => {
                     type="text"
                     required={true}
                     placeholder="Your name"
-                    className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    className=" h-10 appearance-none pl-7 w-full px-3 py-2 border border-gray-300 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   />
 
                   <select
                     {...register("type", {})}
-                    className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    className=" h-10 appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   >
                     <option className=" text-slate-500">
                       -- Please choose Appliance Type
@@ -151,11 +151,11 @@ const Booking: NextPage = () => {
                     {...register("date", {})}
                     type="date"
                     required={false}
-                    className=" inline-flex appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    className=" inline-flex appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 min-h-10  h-10"
                   />
                   <select
                     {...register("time", {})}
-                    className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 h-10"
                   >
                     <option value="" disabled>
                       Preffered Time
@@ -181,14 +181,14 @@ const Booking: NextPage = () => {
                     type="text"
                     required={false}
                     placeholder="Email Address"
-                    className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    className=" h-10 appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   />
                   <input
                     {...register("phone", {})}
                     type="text"
                     required={false}
                     placeholder="Phone number"
-                    className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    className=" h-10 appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 w-full">
@@ -197,7 +197,7 @@ const Booking: NextPage = () => {
                     type="text"
                     required={false}
                     placeholder="Street Address"
-                    className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    className=" h-10 appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 w-full">
@@ -206,7 +206,7 @@ const Booking: NextPage = () => {
                     type="text"
                     required={false}
                     placeholder="City"
-                    className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    className=" h-10 appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   />
 
                   <input
@@ -214,7 +214,7 @@ const Booking: NextPage = () => {
                     type="text"
                     required={false}
                     placeholder="Postal Code"
-                    className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    className=" h-10 appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 w-full">
