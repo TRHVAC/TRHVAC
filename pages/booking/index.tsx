@@ -138,7 +138,7 @@ const Booking: NextPage = () => {
                     {...register("type", {})}
                     className=" h-10 appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                   >
-                    <option className=" text-slate-500">
+                    <option className="text-center text-slate-500">
                       Appliance Type
                     </option>
                     <option value="Furnace">Furnace</option>
@@ -156,11 +156,11 @@ const Booking: NextPage = () => {
                     required={false}
                     placeholder="date"
                     defaultValue={new Date().toISOString().slice(0, 10)}
-                    className="text-left inline-flex appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 min-h-10  h-10"
+                    className="text-center inline-flex appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 min-h-10  h-10"
                   />
                   <select
                     {...register("time", {})}
-                    className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 h-10"
+                    className="text-center appearance-none pl-7 w-full px-3 py-2 border border-gray-300  shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 h-10"
                   >
                     <option value="" disabled>
                       Preffered Time
